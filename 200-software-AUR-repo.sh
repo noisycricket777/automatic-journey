@@ -9,7 +9,7 @@ sh AUR/install-insync-v*.sh
 sh AUR/install-numix-folders-git-v*.sh
 sh AUR/install-gpmdp-v*.sh
 sh AUR/install-the-platinum-searcher-bin-v*.sh
-sh AUR/install-sardi-extra-icons-v*.sh
+sh AUR/install-dropbox-v*.sh
 sh AUR/install-virtualbox-for-linux-v*.sh
 
 # these come last always
