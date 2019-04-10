@@ -19,6 +19,8 @@ sh AUR/install-grsync-v*.sh
 sh AUR/install-mkchromecast-v*.sh
 sh AUR/install-grsync-v*.sh
 sh AUR/install-variety-v*.sh
+sh AUR/install-zsh-v*.sh
+sh AUR/install-hardcode-fixer-git-v*.sh
 
 sh strap.sh
 
