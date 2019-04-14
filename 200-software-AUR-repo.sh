@@ -13,7 +13,7 @@ sh AUR/install-dropbox-v*.sh
 sh AUR/install-meld-v*.sh
 sh AUR/install-sublime-text-v*.sh
 sh AUR/install-joplin-v*.sh
-#sh AUR/install-boostnote-v*.sh
+sh AUR/install-boostnote-v*.sh
 sh AUR/install-clipgrab-v*.sh
 sh AUR/install-grsync-v*.sh
 sh AUR/install-mkchromecast-v*.sh
