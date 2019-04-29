@@ -1,5 +1,5 @@
-!/bin/bash
-set -e
+#!/bin/bash
+#set -e
 ###########################################################################################################
 
 # software from AUR (Arch User Repositories)
@@ -18,11 +18,11 @@ sh AUR/install-clipgrab-v*.sh
 sh AUR/install-grsync-v*.sh
 sh AUR/install-mkchromecast-v*.sh
 sh AUR/install-grsync-v*.sh
+sh AUR/install-grub-customizer-v*.sh
 sh AUR/install-variety-v*.sh
 sh AUR/install-zsh-v*.sh
 sh AUR/install-hardcode-fixer-git-v*.sh
 
-sh strap.sh
 
 
 

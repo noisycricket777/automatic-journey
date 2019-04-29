@@ -1,0 +1,10 @@
+{ 
+   "cinnamon-theme": {
+   "name": "Zorin OS-Dark", 
+   "author": "Brahim Salem based on fmcgorenc's theme", 
+   "version": "1.0",
+   "type":   "custom",
+   "thumbnail": "thumbnail.png", 
+   "url": "" 
+    }
+}

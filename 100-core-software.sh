@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+#set -e
 
 #software from Arch Linux repositories
 
