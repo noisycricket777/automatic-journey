@@ -19,11 +19,11 @@ sudo pacman -S asciiquarium --noconfirm --needed
 sudo pacman -S cmatrix --noconfirm --needed
 #sudo pacman -S cool-retro-term --noconfirm --needed
 #sudo pacman -S cowfortune --noconfirm --needed
-#sudo pacman -S figlet --noconfirm --needed
+sudo pacman -S figlet --noconfirm --needed
 #sudo pacman -S lolcat --noconfirm --needed
 #sudo pacman -S mc --noconfirm --needed
 sudo pacman -S ranger --noconfirm --needed
-sudo pacman -S sl --noconfirm --needed
+
 
 
 ################################################################################
@@ -548,7 +548,7 @@ fi
 
 
 
-package="slurm"
+#package="slurm"
 
 #----------------------------------------------------------------------------------
 
