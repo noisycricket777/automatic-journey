@@ -23,8 +23,6 @@ sh AUR/install-variety-v*.sh
 sh AUR/install-zsh-v*.sh
 sh AUR/install-hardcode-fixer-git-v*.sh
 
-yay -S --needed -< pkglist.txt
-
 # these come last always
 echo "Checking if icons from applications have a hardcoded path"
 echo "and fixing them"
