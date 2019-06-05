@@ -34,7 +34,6 @@ homebank
 htop
 insync
 isousb
-joplin
 keepnote
 libreoffice-fresh
 linux-rt-lts-manjaro-virtualbox-host-modules
@@ -97,7 +96,6 @@ vmware-keymaps
 vmware-workstation
 vscodium-bin
 wallpapers-2018
-wallutils
 wi-feye
 wificurse
 wifijammer
