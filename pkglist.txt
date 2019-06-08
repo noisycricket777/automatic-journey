@@ -38,6 +38,7 @@ pixiewps
 playonlinux
 procps-ng
 pstoedit-nomagick
+synapse
 tor
 tor-autocircuit
 tor-browser-en

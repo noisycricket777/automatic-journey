@@ -4,7 +4,7 @@ android-apktool
 android-bash-completion
 android-file-transfer
 android-sdk-platform-tools
-android-studio
+
 armitage
 asciiquarium
 atom
@@ -57,13 +57,13 @@ openresolv
 playonlinux
 powertop
 python-ptyprocess
-python-pygame
+
 python-screeninfo
 python-system_hotkey
 python2-ptyprocess
-python2-pygame
+
 qownnotes
-ranger
+
 reaver-wps-fork-t6x
 rsync
 s-nail
