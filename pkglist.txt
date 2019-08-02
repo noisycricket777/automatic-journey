@@ -105,8 +105,7 @@ veil
 veracrypt
 virtualbox
 virtualbox-ext-oracle
-virtualbox-ext-vnc
-virtualbox-guest-dkms
+
 vlc
 vscodium-bin
 
