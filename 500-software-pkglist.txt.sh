@@ -6,7 +6,7 @@
 # https://aur.archlinux.org/packages/
 
 
-yay -S --needed -< pkglist.txt
+yay -S -< pkglist.txt
 
 # these come last always
 

@@ -4,18 +4,10 @@ airgeddon-git
 airoscript
 amap
 android-apktool
-android-bash-completion
-android-file-transfer
-android-sdk
-android-sdk-platform-tools
-android-studio
 appimagelauncher
 armitage
 asciiquarium
-
 autotrace-nomagick
-
-
 bash-pipes
 blackarch-menus
 blackarch-wallpaper
@@ -23,8 +15,6 @@ blackman
 bleachbit
 blueberry
 boostnote
-
-
 bully
 burpsuite
 bzip2
