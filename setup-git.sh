@@ -5,7 +5,7 @@
 
 
 
-git init
+sudo git init
     sudo git config --global user.name "noisycricket777"
     sudo git config --global user.email "joshbmitchell@gmail.com"
     sudo git config --system user.name "noisycricket777"

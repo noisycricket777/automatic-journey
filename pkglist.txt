@@ -34,7 +34,7 @@ bully
 burpsuite
 bzip2
 calamares-oem-bldbk-i3-settings
-chromium
+chrome
 cinnamon-sounds
 cinnamon-translations
 clipgrab
