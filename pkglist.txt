@@ -10,8 +10,10 @@ android-file-transfer
 android-sdk
 android-tools
 appimagelauncher
+archlinuxarm-installer
 armitage
 asciiquarium
+atom
 autoconf
 automake
 avahi
@@ -35,8 +37,6 @@ burpsuite
 bzip2
 calamares-oem-bldbk-i3-settings
 chrome
-cinnamon-sounds
-cinnamon-translations
 clipgrab
 cmatrix
 coreutils
@@ -83,6 +83,7 @@ geeqie
 gettext
 gimp
 git
+glibc
 gnome-disk-utility
 gnome-keyring
 gnome-screenshot
@@ -90,6 +91,7 @@ gnome-system-log
 gnome-system-monitor
 gnome-terminal
 gnome-themes-extra
+google-chrome
 google-keep-nativefier
 google-photos-desktop
 gparted
@@ -123,6 +125,7 @@ insync
 intel-ucode
 inxi
 iproute2
+ipscan
 iptables
 iputils
 ipw2100-fw
@@ -163,6 +166,7 @@ make
 man-db
 man-pages
 manjaro-alsa
+manjaro-arm-installer
 manjaro-browser-settings
 manjaro-documentation-en
 manjaro-firmware
@@ -172,6 +176,7 @@ manjaro-printer
 manjaro-pulse
 manjaro-release
 manjaro-settings-manager-notifier
+manjaro-settings-samba
 manjaro-system
 mdadm
 meld
@@ -201,6 +206,7 @@ networkmanager-pptp
 networkmanager-vpnc
 nfs-utils
 nodejs-nativefier
+nomacs
 nss-mdns
 ntfs-3g
 ntp
@@ -215,12 +221,14 @@ os-prober
 overgrive
 p7zip
 pacman
+pamac-gtk
 papirus-maia-icon-theme
 parcellite
 patch
 patchutils
 pavucontrol
 pciutils
+peek
 perl
 pidgin-libnotify
 pix
@@ -236,6 +244,7 @@ psmisc
 pulseaudio-bluetooth
 pulseaudio-ctl
 pulseaudio-zeroconf
+putty
 pygtk
 python-ptyprocess
 python2-ptyprocess
@@ -247,8 +256,10 @@ reiserfsprogs
 rsync
 s-nail
 screenfetch
+scribus
 sed
 shadow
+simple-scan
 spectre-meltdown-checker
 sublime-text-dev
 subversion
@@ -325,6 +336,7 @@ xorg-twm
 xorg-xhost
 xorg-xinit
 xorg-xkill
+xorg-xrandr
 xplayer
 xreader
 xviewer-plugins

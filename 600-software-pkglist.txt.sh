@@ -6,7 +6,7 @@
 # https://aur.archlinux.org/packages/
 
 
-yay -S -< pkglist11_11.2.txt
+yay -S -< pkglist.txt
 
 # these come last always
 
