@@ -22,7 +22,6 @@ baobab
 bash
 binutils
 bison
-blackarch-config-i3
 blackarch-keyring
 blackarch-menus
 blackarch-wallpaper
@@ -35,7 +34,6 @@ btrfs-progs
 bully
 burpsuite
 bzip2
-calamares-oem-bldbk-i3-settings
 chrome
 clipgrab
 cmatrix
@@ -51,7 +49,6 @@ device-mapper
 dhclient
 dhcpcd
 diffutils
-dmenu-manjaro
 dmidecode
 dmraid
 dnsmasq
@@ -81,7 +78,6 @@ gcc-libs
 gcolor2
 geeqie
 gettext
-gimp
 git
 glibc
 gnome-disk-utility
@@ -91,14 +87,12 @@ gnome-system-log
 gnome-system-monitor
 gnome-terminal
 gnome-themes-extra
-google-chrome
 google-keep-nativefier
 google-photos-desktop
 gparted
 gpmdp
 gprename
 grep
-grive
 grsync
 grub
 grub-customizer
@@ -156,8 +150,6 @@ lightdm-settings
 lightdm-slick-greeter
 linux-firmware
 linux-latest-virtualbox-host-modules
-modules
-linux419
 logrotate
 lsb-release
 lvm2
@@ -186,7 +178,6 @@ mesa-vdpau
 metasploit
 mhwd
 mhwd-db
-mint-themes
 mkchromecast
 mkinitcpio-openswap
 mobile-broadband-provider-info
@@ -194,10 +185,6 @@ modemmanager
 mousetweaks
 mugshot
 nano
-nemo-fileroller
-nemo-preview
-nemo-python
-nemo-share
 neofetch
 netctl
 networkmanager-openconnect
@@ -206,7 +193,6 @@ networkmanager-pptp
 networkmanager-vpnc
 nfs-utils
 nodejs-nativefier
-nomacs
 nss-mdns
 ntfs-3g
 ntp
@@ -221,16 +207,12 @@ os-prober
 overgrive
 p7zip
 pacman
-pamac-gtk
-papirus-maia-icon-theme
 parcellite
 patch
 patchutils
 pavucontrol
 pciutils
-peek
 perl
-pidgin-libnotify
 pix
 pixiewps
 pkgconf
@@ -272,7 +254,6 @@ terminus-font
 texinfo
 the_platinum_searcher-bin
 thunderbird
-timeshift
 tlp
 tor
 tor-autocircuit
