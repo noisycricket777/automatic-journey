@@ -203,7 +203,6 @@ openresolv
 openssh
 openvpn
 os-prober
-overgrive
 p7zip
 pacman
 parcellite
