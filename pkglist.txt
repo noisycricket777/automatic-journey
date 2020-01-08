@@ -34,7 +34,7 @@ btrfs-progs
 bully
 burpsuite
 bzip2
-chrome
+google-chrome
 clipgrab
 cmatrix
 coreutils
@@ -178,7 +178,6 @@ mesa-vdpau
 metasploit
 mhwd
 mhwd-db
-mkchromecast
 mkinitcpio-openswap
 mobile-broadband-provider-info
 modemmanager
@@ -218,7 +217,7 @@ pixiewps
 pkgconf
 playonlinux
 poppler-data
-powerline
+powerline2
 powertop
 pragha
 procps-ng
@@ -303,9 +302,7 @@ xdman
 xed
 xf86-input-elographics
 xf86-input-evdev
-xf86-input-keyboard
 xf86-input-libinput
-xf86-input-mouse
 xf86-input-void
 xf86-video-amdgpu
 xf86-video-ati
