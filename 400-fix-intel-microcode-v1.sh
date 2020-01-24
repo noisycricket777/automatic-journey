@@ -1,8 +1,8 @@
 #!/bin/bash
-#set -e
+set -e
 ##################################################################################################################
-# Author 	: 	Erik Dubois
-# Website 	: 	https://www.erikdubois.be
+# Author	:	Erik Dubois
+# Website	:	https://www.erikdubois.be
 # Website	:	https://www.arcolinux.info
 # Website	:	https://www.arcolinux.com
 # Website	:	https://www.arcolinuxd.com
@@ -13,29 +13,16 @@
 #
 ##################################################################################################################
 
-# checking if I have the latest files from github
-echo "Checking for newer files online first"
-git pull
+# you can use lscpu in the terminal to know if you have an intel or amd
 
-# Below command will backup everything inside the project folder
-git add --all .
+echo "This script will install the microcode for your system"
+echo "Remember if dual booting - you have to manually change some of the grublines"
+echo "to be able to boot. Fallback lines in grub will always work."
+echo "https://wiki.archlinux.org/index.php/Microcode"
 
-# Give a comment to the commit if you want
-echo "####################################"
-echo "Write your commit comment!"
-echo "####################################"
-
-read input
-
-# Committing to the local repository with a message containing the time details and commit text
-
-git commit -m "$input"
-
-# Push the local files to github
-
-git push -u origin master
-
+sudo pacman -S intel-ucode --noconfirm
+sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 echo "################################################################"
-echo "###################    Git Push Done      ######################"
+echo "####                             Fix done                 ######"
 echo "################################################################"
