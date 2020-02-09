@@ -11,7 +11,6 @@ blackarch-menus
 blackarch-wallpaper
 blackman
 bleachbit
-boostnote
 bully
 burpsuite
 dropbox
@@ -65,7 +64,6 @@ ttf-inconsolata
 ttf-indic-otf
 ttf-liberation
 variety
-veil
 veracrypt
 virtualbox
 virtualbox-ext-oracle
