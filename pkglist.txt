@@ -21,7 +21,6 @@ firefox
 freewifi
 geeqie
 google-chrome
-google-keep-nativefier
 google-photos-desktop
 gparted
 gpmdp
