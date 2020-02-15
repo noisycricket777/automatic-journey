@@ -13,7 +13,6 @@ blackman
 bleachbit
 bully
 burpsuite
-dropbox
 etcher
 fern-wifi-cracker
 figlet
@@ -25,8 +24,6 @@ google-photos-desktop
 gparted
 gpmdp
 grub-customizer
-jre8-openjdk
-jre8-openjdk-headless
 jupyter-notebook
 keepnote
 libreoffice-fresh

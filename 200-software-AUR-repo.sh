@@ -10,10 +10,8 @@
 sh AUR/install-neofetch-v*.sh
 sh AUR/install-gpmdp-v*.sh
 #sh AUR/install-the-platinum-searcher-bin-v*.sh
-sh AUR/install-dropbox-v*.sh
 sh AUR/install-meld-v*.sh
 sh AUR/install-sublime-text-v*.sh
-sh AUR/install-joplin-v*.sh
 sh AUR/install-clipgrab-v*.sh
 sh AUR/install-grsync-v*.sh
 sh AUR/install-grub-customizer-v*.sh
