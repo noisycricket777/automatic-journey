@@ -1,20 +1,28 @@
-#!/bin/bash
-#set -e
+#!/bin/sh
 
+# Set source and target directories
+powerline_fonts_dir="$( cd "$( dirname "$0" )" && pwd )"
 
-[ -d $HOME"/.fonts" ] || mkdir -p $HOME"/.fonts"
+# if an argument is given it is used to select which fonts to install
+prefix="$1"
 
+if test "$(uname)" = "Darwin" ; then
+  # MacOS
+  font_dir="$HOME/Library/Fonts"
+else
+  # Linux
+  font_dir="$HOME/.local/share/fonts"
+  mkdir -p $font_dir
+fi
 
-echo "Copy fonts to .fonts"
+# Copy all fonts to user fonts directory
+echo "Copying fonts..."
+find "$powerline_fonts_dir" \( -name "$prefix*.[ot]tf" -or -name "$prefix*.pcf.gz" \) -type f -print0 | xargs -0 -n1 -I % cp "%" "$font_dir/"
 
-cp Personal/settings/fonts/* ~/.fonts/
+# Reset font cache on Linux
+if which fc-cache >/dev/null 2>&1 ; then
+    echo "Resetting font cache, this may take a moment..."
+    fc-cache -f "$font_dir"
+fi
 
-echo "Building new fonts into the cache files";
-echo "Depending on the number of fonts, this may take a while..."
-fc-cache -fv ~/.fonts
-
-
-
-echo "################################################################"
-echo "#########   Fonts have been copied and loaded   ################"
-echo "################################################################"
+echo "Fonts installed to $font_dir"
