@@ -1,11 +1,9 @@
 #!/bin/bash
 #set -e
 
-#software from Arch Linux repositories
+#pia VPN Package installer
 
-#sudo pacman -S --noconfirm --needed screenfetch
-sudo pacman -S --noconfirm --needed trizen
-sudo pacman -S --noconfirm --needed yay
+sh
 sudo pacman -S --noconfirm --needed veracrypt
 
 
