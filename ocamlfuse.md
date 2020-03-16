@@ -65,7 +65,7 @@ You'll also need to add google-drive-ocamlfuse with the mount point as an argume
     After clicking Add, use the following:
 
     Name: google-drive-ocamlfuse
-    Command: sh -c "google-drive-ocamlfuse ~/GoogleDrive"
+    Command: sh -c "google-drive-ocamlfuse ~/Google-Drive"
 
 Instead of adding google-drive-ocamlfuse to startup, you can also automatically mount it in various ways, as explained [here](https://github.com/astrada/google-drive-ocamlfuse/wiki/Automounting).
 
