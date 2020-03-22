@@ -56,7 +56,7 @@ Next, you'll need to create an empty folder in your home directory, which will b
 
 After creating this folder in your home directory, run the command below to mount Google Drive to this folder, like this:
 
-google-drive-ocamlfuse ~/GoogleDrive
+`google-drive-ocamlfuse ~/GoogleDrive`
 
 You'll also need to add google-drive-ocamlfuse with the mount point as an argument to your startup applications. You can access your startup applications as follows:
 
@@ -64,8 +64,8 @@ You'll also need to add google-drive-ocamlfuse with the mount point as an argume
 
     After clicking Add, use the following:
 
-    Name: google-drive-ocamlfuse
-    Command: sh -c "google-drive-ocamlfuse ~/Google-Drive"
+    Name: `google-drive-ocamlfuse`
+    Command: `sh -c "google-drive-ocamlfuse ~/Google-Drive"`
 
 Instead of adding google-drive-ocamlfuse to startup, you can also automatically mount it in various ways, as explained [here](https://github.com/astrada/google-drive-ocamlfuse/wiki/Automounting).
 
