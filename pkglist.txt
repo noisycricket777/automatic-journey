@@ -54,8 +54,6 @@ nano
 neofetch
 notable-bin
 numlockx
-onionscan
-onionshare
 os-prober
 p7zip
 packer
@@ -85,12 +83,6 @@ thunderbird
 timeshift
 tlp
 toilet
-tor
-tor-autocircuit
-tor-browser-en
-tor-router
-torctl
-torsocks
 tree
 trizen
 ttf-bitstream-vera
