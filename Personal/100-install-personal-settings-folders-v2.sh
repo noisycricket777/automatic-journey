@@ -28,7 +28,7 @@ echo "Creating personal folders"
 #[ -d $HOME"/ARCOLINUXD" ] || mkdir -p $HOME"/ARCOLINUXD"
 #[ -d $HOME"/ARCOLINUXB" ] || mkdir -p $HOME"/ARCOLINUXB"
 #[ -d $HOME"/DATA" ] || mkdir -p $HOME"/DATA"
-[ -d $HOME"/Insync" ] || mkdir -p $HOME"/Insync"
+[ -d $HOME"/Google-Drive" ] || mkdir -p $HOME"/Google-Drive"
 
 echo "################################################################"
 echo "#########            folders created            ################"

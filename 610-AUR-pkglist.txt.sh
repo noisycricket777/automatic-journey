@@ -5,9 +5,8 @@
 # software from AUR (Arch User Repositories)
 # https://aur.archlinux.org/packages/
 
-    sudo ./strap.sh
 
-yay -S --needed -< pkglist.txt
+yay -S --needed -< AURpkglist.txt
 
 # these come last always
 
