@@ -3,12 +3,16 @@ cherrytree
 glabels-qt-git
 glabels3-gnubarcode
 google-chrome
+google-drive-ocamlfuse-opam
 google-photos-desktop
 gpmdp
 hardcode-fixer-git
+keepnote
 masterpdfeditor-free
-nextcloud-app-files-markdown
 notable-bin
+nwipe
+qownnotes
+qtwebflix-git
 slurm
 sublime-text-dev
 terminology-themes-git
