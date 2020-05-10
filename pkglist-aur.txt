@@ -11,6 +11,8 @@ keepnote
 masterpdfeditor-free
 notable-bin
 nwipe
+pdfposter
+poster
 qownnotes
 qtwebflix-git
 slurm

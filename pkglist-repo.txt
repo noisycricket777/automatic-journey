@@ -29,12 +29,20 @@ dhclient
 dhcpcd
 dmidecode
 dnsmasq
+docker
+dosfstools
+e2fsprogs
 ecryptfs-utils
 efibootmgr
 etcher
 exfat-utils
 f2fs-tools
 fakeroot
+ffmpegthumbnailer
+figlet
+file
+filesystem
+findutils
 firefox
 flameshot
 flatpak
@@ -86,6 +94,8 @@ libva-mesa-driver
 libva-vdpau-driver
 licenses
 lightdm-settings
+linux-firmware
+linux54
 linux54-headers
 linux55-headers
 linux56-headers
@@ -94,6 +104,7 @@ man-db
 man-pages
 manjaro-alsa
 manjaro-application-utility
+manjaro-arm-qemu-static
 manjaro-browser-settings
 manjaro-cinnamon-settings
 manjaro-documentation-en
@@ -143,6 +154,7 @@ pidgin-libnotify
 pix
 pkgconf
 playonlinux
+posterazor
 powerline2
 powertop
 pragha
@@ -153,6 +165,7 @@ python2-ptyprocess
 qbittorrent
 qt5-styleplugins
 reiserfsprogs
+rsync
 s-nail
 screenfetch
 simple-scan
@@ -205,3 +218,6 @@ xviewer-plugins
 yay
 yelp
 zensu
+zsh
+zsh-completions
+zsh-syntax-highlighting

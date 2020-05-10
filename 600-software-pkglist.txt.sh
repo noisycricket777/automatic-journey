@@ -7,8 +7,8 @@
 
     sudo ./strap.sh
 
-yay -S --needed -< pkglist.txt
-
+yay -S --needed -< pkglist-aur.txt
+yay -S --needed -< pkglist-repo.txt
 # these come last always
 
 echo "Checking if icons from applications have a hardcoded path"
