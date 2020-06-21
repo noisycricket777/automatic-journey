@@ -1,5 +1,4 @@
-acpi
-acpid
+
 adapta-maia-theme
 amd-ucode
 android-file-transfer
@@ -13,13 +12,8 @@ baobab
 bash-completion
 bauh
 bison
-blackarch-keyring
 bleachbit
 blueman
-cinnamon-panel-chooser
-cinnamon-sounds
-cinnamon-translations
-cinnamon-wallpapers
 clipgrab
 cpupower
 crda
@@ -97,7 +91,6 @@ lightdm-settings
 linux-firmware
 linux54
 linux54-headers
-linux55-headers
 linux56-headers
 logrotate
 man-db

@@ -5,10 +5,11 @@
 # software from AUR (Arch User Repositories)
 # https://aur.archlinux.org/packages/
 
-    sudo ./strap.sh
+ 
 
-yay -S --needed -< pkglist-aur.txt
-yay -S --needed -< pkglist-repo.txt
+yay -S --needed -<pkglist-aur.txt
+yay -S --needed -<pkglist-repo.txt
+yay -S --needed -<AURpkglist.txt
 # these come last always
 
 echo "Checking if icons from applications have a hardcoded path"

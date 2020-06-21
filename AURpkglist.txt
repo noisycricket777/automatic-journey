@@ -1,7 +1,6 @@
 android-studio
 cherrytree
 glabels-qt-git
-glabels3-gnubarcode
 google-chrome
 google-photos-desktop
 gpmdp
@@ -16,4 +15,3 @@ tty-clock
 virtualbox-ext-oracle
 vmware-workstation
 xdman
-zettlr
