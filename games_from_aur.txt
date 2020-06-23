@@ -1,0 +1,18 @@
+#!/bin/bash
+#set -e
+
+yay -S minecraft
+yay -S enemy-territory
+yay -S enemy-territory-data
+yay -S eduke32
+yay -S worldofgoo
+yay -S planeshift
+yay -S crack-attack
+yay -S opensonic
+yay -S openarena
+yay -S ultimatestunts
+yay -S wolf
+yay -S stepmania
+yay -S pinball
+yay -S wolfenstein3d
+yay -S alienarena-svn
