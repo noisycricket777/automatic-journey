@@ -1,7 +1,3 @@
-#############################
-#Games
-#############################
-
 steam
 steam-native-runtime
 lutris
@@ -11,10 +7,8 @@ xonotic
 0ad-data
 blinken
 extremetuxracer
-foobillard++
 frozen-bubble
 hedgewars
-neverball
 pingus
 supertux
 teeworlds
@@ -23,7 +17,6 @@ warzone2100
 armagetronad
 astromenace
 wesnoth
-fltk-games
 bomber
 chromium-bsu
 hatari
