@@ -10,6 +10,7 @@ google-photos-desktop
 gpmdp
 hardcode-fixer-git
 keepnote
+lutris-wine-meta
 masterpdfeditor-free
 node-prune
 notable-bin
@@ -18,6 +19,7 @@ otf-crimson-text
 pdfposter
 poster
 pyobd
+python-fontmath
 qownnotes
 qtwebflix-git
 scantool
@@ -29,6 +31,10 @@ tty-clock
 virtualbox-ext-oracle
 vmware-workstation
 vscodium-bin
+wine-gecko-2.47
+wine-gecko-bin
+wine-installer
+wine-mono-gecko-version-fix
 xdg-su
 xdman
 zettlr-bin

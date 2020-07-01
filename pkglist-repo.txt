@@ -1,4 +1,7 @@
-
+0ad
+0ad-data
+acpi
+acpid
 adapta-maia-theme
 aircrack-ng
 aisleriot
@@ -6,7 +9,6 @@ alsa-firmware
 alsa-utils
 amd-ucode
 android-file-transfer
-android-sdk
 android-tools
 apparmor
 appimagelauncher
@@ -28,6 +30,7 @@ blinken
 blobby2
 blueman
 bomber
+brasero
 btrfs-progs
 burpsuite
 bzip2
@@ -45,6 +48,7 @@ cryptsetup
 dbus-x11
 dconf-editor
 deluge
+devede
 device-mapper
 dhclient
 dhcpcd
@@ -132,6 +136,12 @@ ipw2200-fw
 jfsutils
 jre8-openjdk
 jre8-openjdk-headless
+jupyter
+jupyter-nbconvert
+jupyter-notebook
+jupyter-widgetsnbextension
+jupyter_console
+jupyterlab
 kbreakout
 less
 lib32-flex
@@ -188,6 +198,7 @@ mhwd
 mhwd-db
 microsoft-office-web-jak
 mkinitcpio-openswap
+mobile-broadband-provider-info
 modemmanager
 mousetweaks
 mugshot
@@ -313,7 +324,6 @@ wine-mono
 winetricks
 wpa_supplicant
 xcursor-chameleon-pearl-deepin
-xdg-su
 xdg-user-dirs-gtk
 xdg-utils
 xed
@@ -333,6 +343,7 @@ xorg-xhost
 xorg-xinit
 xorg-xkill
 xorg-xrandr
+xpdf
 xplayer
 xreader
 xviewer-plugins
