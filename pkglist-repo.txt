@@ -18,6 +18,8 @@ astromenace
 autoconf
 automake
 avahi
+awesome
+awesome-freedesktop
 b43-fwcutter
 baobab
 bash-completion
@@ -28,7 +30,10 @@ blackarch-keyring
 bleachbit
 blinken
 blobby2
+blueberry
+bluedevil
 blueman
+bluez-utils
 bomber
 brasero
 btrfs-progs
@@ -176,6 +181,7 @@ man-pages
 manjaro-alsa
 manjaro-application-utility
 manjaro-arm-qemu-static
+manjaro-bluetooth
 manjaro-browser-settings
 manjaro-cinnamon-settings
 manjaro-documentation-en
