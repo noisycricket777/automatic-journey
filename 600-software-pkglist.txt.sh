@@ -7,11 +7,11 @@
 
  
 
-yay -S --needed -<pkglist-aur.txt
-yay -S --needed -<pkglist-repo.txt
-yay -S --needed -<AURpkglist.txt
-yay -S --needed -<pkglist-games.txt
-yay -S --needed -<games_from_aur.txt
+yay -S --needed --noconfirm -< pkglist-aur.txt
+yay -S --needed --noconfirm -< pkglist-repo.txt
+yay -S --needed --noconfirm -< AURpkglist.txt
+#yay -S --needed -<pkglist-games.txt
+#yay -S --needed -<games_from_aur.txt
 # these come last always
 
 echo "Checking if icons from applications have a hardcoded path"

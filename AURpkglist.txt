@@ -1,6 +1,5 @@
 android-studio
 cherrytree
-glabels-qt-git
 google-chrome
 google-photos-desktop
 gpmdp
