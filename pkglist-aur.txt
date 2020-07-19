@@ -26,6 +26,7 @@ keepnote
 lighttpd2-git
 lutris-wine-meta
 masterpdfeditor-free
+multibootusb-git
 nextcloud-app-files-markdown
 node-prune
 notable-bin
