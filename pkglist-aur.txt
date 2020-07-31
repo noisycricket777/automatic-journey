@@ -1,6 +1,6 @@
+android-studio
 acroread
 airgeddon-git
-android-studio
 bettercap-caplets-git
 bettercap-git
 bettercap-ui
@@ -26,8 +26,6 @@ keepnote
 lighttpd2-git
 lutris-wine-meta
 masterpdfeditor-free
-multibootusb-git
-nextcloud-app-files-markdown
 node-prune
 notable-bin
 nwipe

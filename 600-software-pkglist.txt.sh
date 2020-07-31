@@ -5,7 +5,8 @@
 # software from AUR (Arch User Repositories)
 # https://aur.archlinux.org/packages/
 
- 
+
+sudo sh ~/automatic-journey/strap.sh
 
 yay -S --needed --noconfirm -< pkglist-aur.txt
 yay -S --needed --noconfirm -< pkglist-repo.txt
