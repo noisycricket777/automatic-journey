@@ -1368,7 +1368,6 @@ posterazor 1.9.7-1
 postgresql-libs 12.3-1
 potrace 1.16-2
 powerline-common 2.8-1
-powerline2 2.8-1
 powertop 2.12-1
 ppp 2.4.7-7
 pptpclient 1.10.0-2

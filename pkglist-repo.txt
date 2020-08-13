@@ -14,7 +14,6 @@ android-tools
 apparmor
 appimagelauncher
 armagetronad
-assaultcube
 astromenace
 autoconf
 automake
@@ -332,7 +331,6 @@ poppler-data
 popsicle
 posterazor
 potrace
-powerline2
 powertop
 pragha
 procps-ng
@@ -463,7 +461,7 @@ xorg-xrandr
 xplayer
 xreader
 xviewer-plugins
-yay-bin
+yay
 yelp
 zensu
 zim
