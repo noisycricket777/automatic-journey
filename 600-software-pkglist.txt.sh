@@ -9,7 +9,7 @@
 sudo sh ~/automatic-journey/strap.sh
 
 yay -S --needed --noconfirm -< pkglist-aur.txt
-yay -S --needed --noconfirm -< pkglist-repo.txt
+#yay -S --needed --noconfirm -< pkglist-repo.txt
 #yay -S --needed -<pkglist-games.txt
 #yay -S --needed -<games_from_aur.txt
 # these come last always

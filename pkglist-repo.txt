@@ -18,8 +18,6 @@ astromenace
 autoconf
 automake
 avahi
-awesome
-awesome-freedesktop
 b43-fwcutter
 baobab
 bash-completion
@@ -284,10 +282,6 @@ mousetweaks
 mugshot
 mythes-en
 nano
-nemo-fileroller
-nemo-preview
-nemo-python
-nemo-share
 neofetch
 net-tools
 netctl
@@ -295,7 +289,6 @@ networkmanager-openconnect
 networkmanager-openvpn
 networkmanager-pptp
 networkmanager-vpnc
-nextcloud-client
 nfs-utils
 nikto
 nmap
@@ -320,7 +313,6 @@ patch
 patchutils
 pavucontrol
 pciutils
-pcmanfm
 perl
 pidgin-libnotify
 pingus

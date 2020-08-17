@@ -8,7 +8,6 @@ biosdisk-git
 cherrytree
 crunch
 edex-ui-git
-foobillard++
 freediag-git
 google-chrome
 google-drive-ocamlfuse-opam
@@ -17,11 +16,8 @@ gpmdp
 handshake-cracker
 hardcode-fixer-git
 hashcat-git
-hostapd-rtl871xdrv
 hostapd-wpe
 intellij-idea-ce
-john-git
-johnny-git
 keepnote
 lighttpd2-git
 lutris-wine-meta
@@ -34,9 +30,7 @@ pdfposter
 poster
 pyobd
 python-fontmath
-python-gtkspellcheck
 python-roguehostapd-git
-python2-gtkspellcheck
 python2-wpactrl
 roguehostapd-git
 slurm
