@@ -16,7 +16,7 @@ sh AUR/install-grsync-v*.sh
 sh AUR/install-grub-customizer-v*.sh
 sh AUR/install-variety-v*.sh
 sh AUR/install-zsh-v*.sh
-sh AUR/install-hardcode-fixer-git-v*.sh
+#sh AUR/install-hardcode-fixer-git-v*.sh
 
 # these come last always
 echo "Checking if icons from applications have a hardcoded path"
