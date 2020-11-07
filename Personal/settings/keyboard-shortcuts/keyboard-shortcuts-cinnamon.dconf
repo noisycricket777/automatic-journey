@@ -23,11 +23,6 @@ binding=['<Super>F5']
 command='meld'
 name='meld'
 
-[custom-keybindings/custom39]
-binding=['<Primary><Alt>v']
-command='vivaldi-stable'
-name='vivaldi'
-
 [custom-keybindings/custom9]
 binding=['<Super>F4']
 command='gimp'
@@ -35,7 +30,7 @@ name='gimp'
 
 [custom-keybindings/custom40]
 binding=['<Super>h']
-command="termite - e 'htop task manager' -e htop"
+command="terminal - e 'htop task manager' -e htop"
 name='htop'
 
 [custom-keybindings/custom13]
@@ -75,8 +70,8 @@ name='evolution'
 
 [custom-keybindings/custom32]
 binding=['<Super>t']
-command='termite'
-name='Termite'
+command='terminal'
+name='Terminal'
 
 [custom-keybindings/custom2]
 binding=['<Alt>n']
@@ -130,8 +125,8 @@ name='inkscape'
 
 [custom-keybindings/custom24]
 binding=['<Super>Return']
-command='termite'
-name='termite'
+command='terminal'
+name='terminal'
 
 [custom-keybindings/custom38]
 binding=['<Super>k']
@@ -155,8 +150,8 @@ name='firefox'
 
 [custom-keybindings/custom41]
 binding=['<Primary><Alt>Return']
-command='termite'
-name='termite'
+command='terminal'
+name='terminal'
 
 [custom-keybindings/custom14]
 binding=['<Primary><Alt>g']
@@ -221,4 +216,4 @@ close=['<Shift><Super>q']
 switch-to-workspace-1=['<Super>1']
 switch-to-workspace-2=['<Super>2']
 switch-to-workspace-3=['<Super>3']
-switch-to-workspace-4=['<Super>4']
+switch-to-workspace-4=['<Super>4']aldi'

@@ -21,7 +21,6 @@ jupyter-widgetsnbextension
 jupyter_console
 jupyterlab
 keepnote
-kitematic
 lutris-wine-meta
 meld
 nano
@@ -37,7 +36,6 @@ posterazor
 simple-scan
 slurm
 sublime-text-dev
-terminology-themes-git
 testdisk
 tor
 torbrowser-launcher
