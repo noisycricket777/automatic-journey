@@ -13,10 +13,12 @@ notable-bin
 nwipe
 oh-my-zsh-powerline-theme-git
 otf-crimson-text
+rpi-imager
 slurm
 sublime-text-dev
 ttf-meslo-nerd-font-powerlevel10k
 tty-clock
+usb-creator
 virtualbox-ext-oracle
 vmware-component-extractor-git
 vmware-tools
