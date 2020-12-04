@@ -1,0 +1,23 @@
+ dnf repoquery --qf '%{name}' --userinstalled \
+ | grep -v -- '-debuginfo$' \
+ | grep -v '^\(kernel-modules\|kernel\|kernel-core\|kernel-devel\)$' > pkgs_a.lst
+
+In contrast to other methods, it also lists all debuginfo packages. The additional grep in the above example filters them out.
+
+To install the list on host B:
+
+$ < pkgs_a.lst xargs dnf -y install
+
+Dnf API
+
+With recent Dnf versions (e.g. Fedora >= 23), the package database can be queried for user installed package names via the Dnf Python API:
+
+`$ python3 -c 'import dnf; b = dnf.Base(); b.fill_sack(); \
+  l = sorted(set(x.name for x in b.iter_userinstalled() \
+       if not x.name.endswith("-debuginfo") \
+          and x.name not in \
+             ["kernel-modules", "kernel", "kernel-core", "kernel-devel"] )); \
+  print("\n".join(l)) ' > pkgs_a.lst`
+
+'# dnf install $(cat pkgs_a.lst) # on host_b'
+PS: Put the above code and more into user-installed.py that also supports other distributions.
