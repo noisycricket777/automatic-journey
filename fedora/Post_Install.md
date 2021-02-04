@@ -1,9 +1,24 @@
-`sudo dnf -y upgrade`
+### Install updates and reboot[](#install-updates-and-reboot)
+
+    sudo dnf upgrade --refresh
+    sudo dnf check
+    sudo dnf autoremove
+    sudo fwupdmgr get-devices
+    sudo fwupdmgr refresh --force
+    sudo fwupdmgr get-updates
+    sudo fwupdmgr update
+    sudo reboot now
  
 # Enable RPM Fusion free/nonfree repos
 
 sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm 
 
+* to enable the RPM Fusion free and nonfree repositories. Afterwards I run
+
+    sudo dnf upgrade --refresh
+    sudo dnf groupupdate core
+    sudo dnf install -y rpmfusion-free-release-tainted
+    sudo dnf install -y dnf-plugins-core
 # To enable DVD playback in Fedora, enable the Tainted RPM Fusion repository. After enabling, install the libdvdcss package.
 
 sudo dnf install -y rpmfusion-free-release-tainted 
@@ -25,6 +40,28 @@ sudo dnf -y groupupdate multimedia --setop="install_weak_deps=False" --exclude=P
 # This package install complement packages needed by some applications for sound and video.
 
 sudo dnf -y groupupdate sound-and-video
+
+### Flatpak support[](#flatpak-support)
+
+Flatpak is installed by default on Fedora Workstation, but one needs to enable the Flathub store:
+
+    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    flatpak update
+    
+    
+
+### Snap support[](#snap-support)
+
+Enabling snap support boils down to running the following commands:
+
+    sudo dnf install -y snapd
+    sudo ln -s /var/lib/snapd/snap /snap # for classic snap support
+    sudo reboot now
+    
+
+The restart is needed to ensure snap’s paths are updated correctly. After the reboot, check whether there are any updates:
+
+    sudo snap refresh
 
 # Gnome Tweak Tool makes it easy to modify the system
 
@@ -67,3 +104,7 @@ Step 2: Install Wine 6 on Fedora 33/32/31/30/29
 **Stable branch** – (**_Recommended_**)
 
     sudo dnf -y install winehq-stable
+
+# **Install Additional Desktop Environments**
+    sudo dnf grouplist -v hidden
+    sudo dnf install @cinnamon-desktop-environment @cinnamon-desktop @enlightenment-desktop @electronic-lab @platform-vmware
