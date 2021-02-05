@@ -108,3 +108,228 @@ Step 2: Install Wine 6 on Fedora 33/32/31/30/29
 # **Install Additional Desktop Environments**
     sudo dnf grouplist -v hidden
     sudo dnf install @cinnamon-desktop-environment @cinnamon-desktop @enlightenment-desktop @electronic-lab @platform-vmware
+    
+    sudo dnf copr enable kwizart/fedy  
+sudo dnf install fedy -y
+
+sudo dnf copr enable kwizart/fedy
+sudo dnf install fedy -y
+
+[![Effie Talor](https://miro.medium.com/fit/c/56/56/1*kNZNgLC6JrVe3ykC3xkCRQ.jpeg)](https://eftalor.medium.com/?source=post_page-----f68751eef156--------------------------------)
+
+With the release of [Fedora 33](https://getfedora.org/en/workstation/download/) today, I have decided to go back to my roots and decided to remove Ubuntu for Fedora.
+
+You can say what you want on Ubuntu, but you have got to admit that it has quite a big community and hobby-developers that enables end users to easily install things or do tasks that are rather cumbersome on other Linux distributions. Not to mention the shitload of Ubuntu guides out there… Fedora lacks some of this, however if you are using Fedora I suppose that you more than just an average Linux user…
+
+Therefore, I have decided to come up with this guide, to give Fedora some love… So here we go!
+
+![Image for post](https://miro.medium.com/max/60/1*IVg0Zjt8-mnz6MUVfffF-Q.png?q=20)
+
+![Image for post](https://miro.medium.com/max/534/1*IVg0Zjt8-mnz6MUVfffF-Q.png)
+
+The Fedora Logo
+
+This one is driving me crazy, always…  
+I like to always have a text navigation bar.  
+**Tip**: to change it temporarily you can simply invoke _ctrl + l_
+
+> Before:
+
+![Image for post](https://miro.medium.com/max/60/1*Ueel8HRnSOlr2myojVua1Q.png?q=20)
+
+![Image for post](https://miro.medium.com/max/1834/1*Ueel8HRnSOlr2myojVua1Q.png)
+
+After:
+
+![Image for post](https://miro.medium.com/max/60/1*PV4chMyNZ9tZxvj4Vln5Ig.png?q=20)
+
+![Image for post](https://miro.medium.com/max/1930/1*PV4chMyNZ9tZxvj4Vln5Ig.png)
+
+Open a terminal and invoke:
+
+> `$ gsettings set org.gnome.nautilus.preferences always-use-location-entry true`
+
+Need I say more?
+
+Head over to [RPMFusion’s](https://rpmfusion.org/Configuration) configuration page, but you’re probably lazy so here you go:
+
+> `$ sudo dnf install [https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-33.noarch.rpm](https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-33.noarch.rpm)`
+> 
+> `$ sudo dnf install [https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-33.noarch.rpm](https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-33.noarch.rpm)`
+
+DNF is great and have come a long way since the days of Yum, it can be even better by enabling 3 of its plugins:
+
+_fastestmirror_: Selects the fastest mirror server for the DNF updates
+
+_deltarpm_: Instead of downloading the whole RPM update , it just downloads the portion of changed files since the previous update, can save on huge download.
+
+_max\_parallel\_downloads_: DNF by default is set to 3 concurrent downloads, the max is 10 concurrent downloads. I would recommend to set it to 6
+
+Using your favorite editor, edit the DNF configuration file:
+
+> `/etc/dnf/dnf.conf`
+
+Now, add these:
+
+> `fastestmirror=true  
+> deltarpm=true  
+> max_parallel_downloads=6`
+
+On Ubuntu and others it is rather easy, but in Fedora it might be painful. There are quiet an amount of guides out there which all redirect to dead link to downloads fonts… However there is this way, provided by RPM Fusion (and is not much documented for a reason)
+
+> `$ sudo dnf install lpf-mscore-fonts lpf-cleartype-fonts`
+
+This will install new graphical utilities:
+
+![Image for post](https://miro.medium.com/max/60/1*hRxNHrqD9fpm1jpBZ6Zi0A.png?q=20)
+
+![Image for post](https://miro.medium.com/max/710/1*hRxNHrqD9fpm1jpBZ6Zi0A.png)
+
+Go run them and follow the instructions.
+
+Edit: Nov 4th:  
+I found out there is an easier way to overcome the “ugly fonts” problem.  
+Enable this Copr repo and enable the installation of various fonts that will act as a replacement to proprietary fonts (ie MS) and will make browsers look better:
+
+sudo dnf copr enable dawid/better\_fontssudo dnf install -y fontconfig-enhanced-defaults fontconfig-font-replacements
+
+Well, I am using Gmail and Gsuite with my browser, but I still want the feel of a local mail client sometimes… Fedora developers have knowingly decided not to include a mail client in Fedora. I get this… Thunderbird cowardly refuses to integrate with the OS it is installed on and looks different. Evolution is too bulky, but there’s one little client that should satisfy the average user:
+
+> `$ sudo dnf install geary`
+
+I might have missed that, but installation had no choice for setting the hostname, but we can easily amend it by invoking the below:
+
+> `$ sudo hostnamectl set-hostname my-new-lovely-computer`
+
+Starting Gnome 3.36 there’s an app for managing you extensions, which is strangely not installed by default on Fedora
+
+> `$ sudo dnf install gnome-extensions-app`
+
+(and if we're at it, let’s also install gnome-tweaks though it is somewhat redundant by now…)
+
+> `$ sudo dnf _install_ gnome-tweaks`
+
+Recently I have found out that PulseAudio (the sound server) has an option to do echo and noise cancellation, I think it is kinda handy it these Zoom-infused times.
+
+Using you favorite editor, edit the PulseAudio configuration file:
+
+> `/etc/pulse/default.pa`
+
+Add this somewhere in the file (its end is probably good)
+
+.ifexists module-echo-cancel.so  
+load-module module-echo-cancel aec\_method=webrtc source\_name=echocancel sink\_name=echocancel1  
+set-default-source echocancel  
+set-default-sink echocancel1  
+.endif
+
+Now we need to kill PulseAudio (it will restart automatically)
+
+> `$ pulseaudio -k`
+
+Your audio devices should now have a longer name specifying there is noise cancellation:
+
+![Image for post](https://miro.medium.com/max/1030/1*GyV_hhlf-3T1vriNrCz_qQ.png)
+
+Oh, and if you feel like tweaking your web camera video settings:
+
+> `$ sudo dnf install guvcview`
+
+Gnome-software by itself already has flatpaks enabled by default, however for the the _flatpak_ command line tool it is not (and well, I like to do things from the terminal) so:
+
+> `$ flatpak remote-add-if-not-exists flathub [https://flathub.org/repo/flathub.flatpakrepo](https://flathub.org/repo/flathub.flatpakrepo)`
+
+Note: make sure you’ve installed the RPMFusion-nonfree!  
+Find more information in RPMFusion’s [Multimedia post-install page](https://rpmfusion.org/Configuration/#Multimedia_post-install)
+
+> `sudo dnf groupupdate Multimedia`
+
+Well I don’t like it.. here’s the terminal command for disabling it , first command if for the mouse, the second one is for the touchpad (if you are using a laptop)  
+When you’re on a touch screen natural scrolling feels… natural, but it means that your mouse wheel is backwards.
+
+> `$ gsettings set org.gnome.desktop.peripherals.mouse natural-scroll false`  
+> `$ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false`
+
+And if for some reason you want it back… (why?!)
+
+> `$ gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true`  
+> `$ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true`
+
+That’s it! Enjoy your fresh Fedora 33 installation!  
+Hope you find some of the tips useful, questions? help? please comment!
+
+Update November 22nd:  
+Now that you’ve installed Fedora, how about improving your Gnome experience with [12 Must Have Gnome-Shell Extensions!](https://eftalor.medium.com/12-must-have-gnome-shell-extensions-1f04f09c4466)
+OR if you want to install full blown Google-ized Chrome. If you want to install a different version, change the package from -stable to -beta or -unstable.
+
+    sudo dnf install fedora-workstation-repositories
+    
+    sudo dnf config-manager --set-enabled google-chrome
+    
+    sudo dnf install -y google-chrome-stable
+
+### Fedy
+	sudo dnf copr enable kwizart/fedy
+	
+	sudo dnf install fedy -y
+# VMware    
+    ### Installing Dependencies
+
+**Installing Required Packages**  
+With:
+    sudo dnf install kernel-headers kernel-devel gcc glibc-headers make libaio
+
+*   ### Setting Up VMware Workstation 16 Pro Installer
+    
+    So now **Run VMware-Workstation Bundle**  
+    Access the VMware Workstation Bundle Location:
+    
+    Copy
+    
+    cd $HOME/Downloads
+    
+    Give Execution Permissions:
+    
+    Copy
+    
+    chmod +x ./VMware-Workstation\*16\*.bundle
+    
+    Then Run the VMware Workstation Bundle:
+    
+    Copy
+    
+    sudo ./VMware-Workstation\*16\*.bundle
+    
+    With this Take the Time and leave the Setup to Make all required Components.
+    
+*   ### 5\. Starting VMware Workstation 16 Pro Installer
+    
+    Now **Launch VMware Workstation 16 Pro Wizard**  
+    From Command Line with:
+    
+    Copy
+    
+    vmware
+    
+    Accept the Licenses:
+    
+    ![VMware Workstation 16 Pro Fedora 33 Installation - Accept Licenses](https://mediaw.tutorialforlinux.com/software/vmware/workstation/pro/16/installer/1-endUserLicense.png)
+    
+    ![VMware Workstation 16 Pro Fedora 33 Installation - Accept Licenses](https://mediaw.tutorialforlinux.com/software/vmware/workstation/pro/16/installer/1-endUserLicense.png)
+    
+      
+    Next Choose if partecipating to VMware CEIP:  
+    ![VMware Workstation 16 Pro Fedora 33 Installation - Customer Experience Improvement Program](https://mediaw.tutorialforlinux.com/software/vmware/workstation/pro/16/installer/2-ceipProgram.png)
+    
+    ![VMware Workstation 16 Pro Fedora 33 Installation - Customer Experience Improvement Program](https://mediaw.tutorialforlinux.com/software/vmware/workstation/pro/16/installer/2-ceipProgram.png)
+    
+      
+    Possibly Insert the **License Key** if Already have One:  
+    (You can always give it in a next time)  
+    ![VMware Workstation 16 Pro Fedora 33 Installation - Insert License Key](https://mediaw.tutorialforlinux.com/software/vmware/workstation/pro/16/installer/3-licenseKey.png)
+    
+    ![VMware Workstation 16 Pro Fedora 33 Installation - Insert License Key](https://mediaw.tutorialforlinux.com/software/vmware/workstation/pro/16/installer/3-licenseKey.png)
+    
+      Then automatically **Start Installation** and in a few while it should be Successfully Achieved!
+      
+      ZF3R0-FHED2-M80TY-8QYGC-NPKYF
