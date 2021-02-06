@@ -333,3 +333,108 @@ With:
       Then automatically **Start Installation** and in a few while it should be Successfully Achieved!
       
       ZF3R0-FHED2-M80TY-8QYGC-NPKYF
+      
+## PacketTracer on Fedora 31 Workstation
+
+*   Log into the Fedora GNOME Desktop  
+    Remove old version of PacketTracer (if necessary):  
+    rm -rf /opt/pt  
+    rm -rf /usr/share/applications/cisco-pt.desktop  
+    rm -rf /usr/share/applications/cisco-ptsa.desktop  
+    rm -rf /usr/share/icons/hicolor/48x48/apps/pt.png
+    
+*   Download from the netacad web site the PacketTracer\_730\_amd64.deb package.
+    
+*   Open a terminal :  
+    mkdir -p tmp/pt800  
+    copy the `ar -xv PacketTracer_800_amd64_build212_final.deb` package to tmp/pt800
+    
+*   We’re going to extract the deb file in this folder:  
+    cd tmp/pt800  
+    ar -xv PacketTracer_800_amd64_build212_final.deb
+    mkdir control  
+    tar -C control -Jxf control.tar.xz  
+    mkdir data  
+    tar -C data -Jxf data.tar.xz
+    
+*   Copy PacketTracer files to install it:  
+    cd data  
+    sudo cp -r usr /  
+    sudo cp -r opt /
+    
+*   Configure Gnome Environment:  
+    sudo xdg-desktop-menu install /usr/share/applications/cisco-pt.desktop  
+    sudo xdg-desktop-menu install /usr/share/applications/cisco-ptsa.desktop  
+    sudo update-mime-database /usr/share/mime  
+    sudo gtk-update-icon-cache --force --ignore-theme-index /usr/share/icons/gnome  
+    sudo xdg-mime default cisco-ptsa7.desktop x-scheme-handler/pttp  
+    sudo ln -sf /opt/pt/packettracer /usr/local/bin/packettracer
+
+### Chromecast Using Terminal
+
+You can use your terminal to cast your files to a TV. You may cast local files or YouTube videos.
+
+**_Step 1:_** Open your terminal
+
+_**Step 2:**_ Install mkchromecast. I already have this installed, and you can install it using the following terminal command:
+
+$ sudo apt install mkchromecast
+
+**_Step 3:_** Enter the below command to see a list of available networks. In the top right corner, you will be able to see a new Chromecast icon. Click the icon and select your TV.
+
+$ mkchromecast \-t
+
+[![](https://linuxhint.com/wp-content/uploads/2020/05/4-36.png)
+
+![](https://linuxhint.com/wp-content/uploads/2020/05/4-36.png)
+
+](https://linuxhint.com/wp-content/uploads/2020/05/4-36.png)
+
+If you are unable to see any devices, select the “Search for Media Streaming Devices” option.
+
+**_Step 4:_** To cast media to the selected device, use the following commands:
+
+For local files:
+
+$ mkchromecast \--video \-i /home/videos/cast.mp4
+
+You may replace “/home/videos/cast.mp4” with the path of your own local video file.
+
+### How to Install Visual Studio Code on CentOS, RHEL, and Fedora
+
+The procedure of installing **Visual Studio Code** on RedHat based distributions is pretty much like **Ubuntu**. Right off the bat, launch your terminal and update your system:
+
+$ sudo dnf update
+
+Next, import Microsoft’s GPG key using the [rpm command](https://www.tecmint.com/20-practical-examples-of-rpm-commands-in-linux/ "20 Practical Examples of RPM Commands in Linux") below:
+
+$ sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
+
+With Microsoft’s GPG key in place, proceed and create the repository file for **Visual Studio Code**:
+
+$ sudo vim /etc/yum.repos.d/vstudio\_code.repo
+
+Next, append the code below and save the file:
+
+\[code\]
+name=Visual Studio Code
+baseurl=https://packages.microsoft.com/yumrepos/vscode
+enabled=1
+gpgcheck=1
+gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+
+To install Visual Studio code, run the command:
+
+$ sudo dnf install code
+
+To use it, use the Application manager to search the **Visual Studio Code** and launch it, you will get a window as shown below.
+
+[![Install Visual Studio Code in CentOS](https://www.tecmint.com/wp-content/uploads/2020/05/Install-Visual-Studio-Code-in-CentOS.png)
+
+![Install Visual Studio Code in CentOS](https://www.tecmint.com/wp-content/uploads/2020/05/Install-Visual-Studio-Code-in-CentOS.png)
+
+](https://www.tecmint.com/wp-content/uploads/2020/05/Install-Visual-Studio-Code-in-CentOS.png)
+
+Install Visual Studio Code in CentOS
+
+You can now proceed and start writing your code and installing your preferred extensions.
