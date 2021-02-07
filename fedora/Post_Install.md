@@ -8,10 +8,10 @@
     sudo fwupdmgr get-updates
     sudo fwupdmgr update
     sudo reboot now
- 
+
 # Enable RPM Fusion free/nonfree repos
 
-sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm 
+sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
 * to enable the RPM Fusion free and nonfree repositories. Afterwards I run
 
@@ -21,12 +21,12 @@ sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-rele
     sudo dnf install -y dnf-plugins-core
 # To enable DVD playback in Fedora, enable the Tainted RPM Fusion repository. After enabling, install the libdvdcss package.
 
-sudo dnf install -y rpmfusion-free-release-tainted 
-sudo dnf install -y libdvdcss 
+sudo dnf install -y rpmfusion-free-release-tainted
+sudo dnf install -y libdvdcss
 
 # The Nonfree Tainted repository contains software that may have ambiguous copyright or distribution rules. The firmware command will install additional drivers that help with hardware compatibility.
 
-sudo dnf install -y rpmfusion-nonfree-release-tainted 
+sudo dnf install -y rpmfusion-nonfree-release-tainted
 sudo dnf install -y *-firmware
 
 # AppStream will display the RPM Fusion software in Gnome Software and KDE Discover.
@@ -35,7 +35,7 @@ sudo dnf -y groupupdate core
 
 # The following command will adds packages for gstreamer enabled applications.
 
-sudo dnf -y groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin 
+sudo dnf -y groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 
 # This package install complement packages needed by some applications for sound and video.
 
@@ -47,8 +47,8 @@ Flatpak is installed by default on Fedora Workstation, but one needs to enable t
 
     flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     flatpak update
-    
-    
+
+
 
 ### Snap support[](#snap-support)
 
@@ -57,7 +57,7 @@ Enabling snap support boils down to running the following commands:
     sudo dnf install -y snapd
     sudo ln -s /var/lib/snapd/snap /snap # for classic snap support
     sudo reboot now
-    
+
 
 The restart is needed to ensure snap’s paths are updated correctly. After the reboot, check whether there are any updates:
 
@@ -65,11 +65,11 @@ The restart is needed to ensure snap’s paths are updated correctly. After the 
 
 # Gnome Tweak Tool makes it easy to modify the system
 
-sudo dnf install -y gnome-tweak-tool 
+sudo dnf install -y gnome-tweak-tool
 
 # VLC is a popular media player.
 
-sudo dnf install -y vlc 
+sudo dnf install -y vlc
 
 # Additional codecs to cover multimedia
 
@@ -81,7 +81,7 @@ sudo dnf -y install gparted
 
 # Improved fonts. Enable the better fonts repo and then install the fonts.
 
-sudo dnf copr enable dawid/better_fonts 
+sudo dnf copr enable dawid/better_fonts
 
 sudo dnf install -y fontconfig-enhanced-defaults fontconfig-font-replacements
 
@@ -108,7 +108,7 @@ Step 2: Install Wine 6 on Fedora 33/32/31/30/29
 # **Install Additional Desktop Environments**
     sudo dnf grouplist -v hidden
     sudo dnf install @cinnamon-desktop-environment @cinnamon-desktop @enlightenment-desktop @electronic-lab @platform-vmware
-    
+
     sudo dnf copr enable kwizart/fedy  
 sudo dnf install fedy -y
 
@@ -154,7 +154,7 @@ Need I say more?
 Head over to [RPMFusion’s](https://rpmfusion.org/Configuration) configuration page, but you’re probably lazy so here you go:
 
 > `$ sudo dnf install [https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-33.noarch.rpm](https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-33.noarch.rpm)`
-> 
+>
 > `$ sudo dnf install [https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-33.noarch.rpm](https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-33.noarch.rpm)`
 
 DNF is great and have come a long way since the days of Yum, it can be even better by enabling 3 of its plugins:
@@ -263,14 +263,14 @@ Now that you’ve installed Fedora, how about improving your Gnome experience wi
 OR if you want to install full blown Google-ized Chrome. If you want to install a different version, change the package from -stable to -beta or -unstable.
 
     sudo dnf install fedora-workstation-repositories
-    
+
     sudo dnf config-manager --set-enabled google-chrome
-    
+
     sudo dnf install -y google-chrome-stable
 
 ### Fedy
 	sudo dnf copr enable kwizart/fedy
-	
+
 	sudo dnf install fedy -y
 # VMware    
     ### Installing Dependencies
@@ -280,60 +280,60 @@ With:
     sudo dnf install kernel-headers kernel-devel gcc glibc-headers make libaio
 
 *   ### Setting Up VMware Workstation 16 Pro Installer
-    
+
     So now **Run VMware-Workstation Bundle**  
     Access the VMware Workstation Bundle Location:
-    
+
     Copy
-    
+
     cd $HOME/Downloads
-    
+
     Give Execution Permissions:
-    
+
     Copy
-    
+
     chmod +x ./VMware-Workstation\*16\*.bundle
-    
+
     Then Run the VMware Workstation Bundle:
-    
+
     Copy
-    
+
     sudo ./VMware-Workstation\*16\*.bundle
-    
+
     With this Take the Time and leave the Setup to Make all required Components.
-    
+
 *   ### 5\. Starting VMware Workstation 16 Pro Installer
-    
+
     Now **Launch VMware Workstation 16 Pro Wizard**  
     From Command Line with:
-    
+
     Copy
-    
+
     vmware
-    
+
     Accept the Licenses:
-    
+
     ![VMware Workstation 16 Pro Fedora 33 Installation - Accept Licenses](https://mediaw.tutorialforlinux.com/software/vmware/workstation/pro/16/installer/1-endUserLicense.png)
-    
+
     ![VMware Workstation 16 Pro Fedora 33 Installation - Accept Licenses](https://mediaw.tutorialforlinux.com/software/vmware/workstation/pro/16/installer/1-endUserLicense.png)
-    
-      
+
+
     Next Choose if partecipating to VMware CEIP:  
     ![VMware Workstation 16 Pro Fedora 33 Installation - Customer Experience Improvement Program](https://mediaw.tutorialforlinux.com/software/vmware/workstation/pro/16/installer/2-ceipProgram.png)
-    
+
     ![VMware Workstation 16 Pro Fedora 33 Installation - Customer Experience Improvement Program](https://mediaw.tutorialforlinux.com/software/vmware/workstation/pro/16/installer/2-ceipProgram.png)
-    
-      
+
+
     Possibly Insert the **License Key** if Already have One:  
     (You can always give it in a next time)  
     ![VMware Workstation 16 Pro Fedora 33 Installation - Insert License Key](https://mediaw.tutorialforlinux.com/software/vmware/workstation/pro/16/installer/3-licenseKey.png)
-    
+
     ![VMware Workstation 16 Pro Fedora 33 Installation - Insert License Key](https://mediaw.tutorialforlinux.com/software/vmware/workstation/pro/16/installer/3-licenseKey.png)
-    
+
       Then automatically **Start Installation** and in a few while it should be Successfully Achieved!
-      
+
       ZF3R0-FHED2-M80TY-8QYGC-NPKYF
-      
+
 ## PacketTracer on Fedora 31 Workstation
 
 *   Log into the Fedora GNOME Desktop  
@@ -342,13 +342,13 @@ With:
     rm -rf /usr/share/applications/cisco-pt.desktop  
     rm -rf /usr/share/applications/cisco-ptsa.desktop  
     rm -rf /usr/share/icons/hicolor/48x48/apps/pt.png
-    
+
 *   Download from the netacad web site the PacketTracer\_730\_amd64.deb package.
-    
+
 *   Open a terminal :  
     mkdir -p tmp/pt800  
     copy the `ar -xv PacketTracer_800_amd64_build212_final.deb` package to tmp/pt800
-    
+
 *   We’re going to extract the deb file in this folder:  
     cd tmp/pt800  
     ar -xv PacketTracer_800_amd64_build212_final.deb
@@ -356,12 +356,12 @@ With:
     tar -C control -Jxf control.tar.xz  
     mkdir data  
     tar -C data -Jxf data.tar.xz
-    
+
 *   Copy PacketTracer files to install it:  
     cd data  
     sudo cp -r usr /  
     sudo cp -r opt /
-    
+
 *   Configure Gnome Environment:  
     sudo xdg-desktop-menu install /usr/share/applications/cisco-pt.desktop  
     sudo xdg-desktop-menu install /usr/share/applications/cisco-ptsa.desktop  
@@ -438,3 +438,9 @@ To use it, use the Application manager to search the **Visual Studio Code** and 
 Install Visual Studio Code in CentOS
 
 You can now proceed and start writing your code and installing your preferred extensions.
+
+## Fedora Media Writer – The fastest way to create Live-USB boot media
+
+### For Fedora
+
+sudo dnf install liveusb-creator -y
