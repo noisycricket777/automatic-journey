@@ -1,136 +1,158 @@
-### Install updates and reboot[](#install-updates-and-reboot)
+># Install updates and reboot
+====================================
+		
+		sudo dnf upgrade --refresh
+		
+		sudo dnf check
+		
+		sudo dnf autoremove
+		
+		sudo fwupdmgr get-devices
+		
+		sudo fwupdmgr refresh --force
+    	
+		sudo fwupdmgr get-updates
+    	
+		sudo fwupdmgr update
+    	
+		sudo reboot now
 
-    sudo dnf upgrade --refresh
-    sudo dnf check
-    sudo dnf autoremove
-    sudo fwupdmgr get-devices
-    sudo fwupdmgr refresh --force
-    sudo fwupdmgr get-updates
-    sudo fwupdmgr update
-    sudo reboot now
+># Enable RPM Fusion free/non-free repos
+====================================================
 
-# Enable RPM Fusion free/nonfree repos
+		sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
 
-sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+----
+* ###### To enable the RPM Fusion free and non-free repositories. Afterwards run.
+---------------------------------------------------------------------------
+	
+		sudo dnf upgrade --refresh
+    	
+		sudo dnf groupupdate core
+    	
+		sudo dnf install -y rpmfusion-free-release-tainted
+    	
+		sudo dnf install -y dnf-plugins-core
+-----
+* ###### To enable DVD playback in Fedora, enable the Tainted RPM Fusion repository. After enabling, install the libdvdcss package.
+	
+		sudo dnf install -y rpmfusion-free-release-tainted
+		
+		sudo dnf install -y libdvdcss
 
-* to enable the RPM Fusion free and nonfree repositories. Afterwards I run
+---------
+* ###### The Non-free Tainted repository contains software that may have ambiguous copyright or distribution rules. The firmware command will install additional drivers that help with hardware compatibility.
 
-    sudo dnf upgrade --refresh
-    sudo dnf groupupdate core
-    sudo dnf install -y rpmfusion-free-release-tainted
-    sudo dnf install -y dnf-plugins-core
-# To enable DVD playback in Fedora, enable the Tainted RPM Fusion repository. After enabling, install the libdvdcss package.
+		sudo dnf install -y rpmfusion-nonfree-release-tainted
+		
+		sudo dnf install -y *-firmware
+---
+* ##### AppStream will display the RPM Fusion software in Gnome Software and KDE Discover.
 
-sudo dnf install -y rpmfusion-free-release-tainted
-sudo dnf install -y libdvdcss
+		sudo dnf -y groupupdate core
+---
+* ##### The following command will adds packages for gstreamer enabled applications.
 
-# The Nonfree Tainted repository contains software that may have ambiguous copyright or distribution rules. The firmware command will install additional drivers that help with hardware compatibility.
+		sudo dnf -y groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+---
+* ##### This package install complement packages needed by some applications for sound and video.
 
-sudo dnf install -y rpmfusion-nonfree-release-tainted
-sudo dnf install -y *-firmware
+		sudo dnf -y groupupdate sound-and-video
+----
 
-# AppStream will display the RPM Fusion software in Gnome Software and KDE Discover.
+># Flatpak support
+=====================
 
-sudo dnf -y groupupdate core
-
-# The following command will adds packages for gstreamer enabled applications.
-
-sudo dnf -y groupupdate multimedia --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-
-# This package install complement packages needed by some applications for sound and video.
-
-sudo dnf -y groupupdate sound-and-video
-
-### Flatpak support[](#flatpak-support)
 
 Flatpak is installed by default on Fedora Workstation, but one needs to enable the Flathub store:
 
-    flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    flatpak update
+		flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    
+		flatpak update
 
 
 
-### Snap support[](#snap-support)
+># Snap support
+====================
 
-Enabling snap support boils down to running the following commands:
+* Enabling snap support boils down to running the following commands:
 
-    sudo dnf install -y snapd
-    sudo ln -s /var/lib/snapd/snap /snap # for classic snap support
-    sudo reboot now
-
-
-The restart is needed to ensure snap’s paths are updated correctly. After the reboot, check whether there are any updates:
-
-    sudo snap refresh
-
-# Gnome Tweak Tool makes it easy to modify the system
-
-sudo dnf install -y gnome-tweak-tool
-
-# VLC is a popular media player.
-
-sudo dnf install -y vlc
-
-# Additional codecs to cover multimedia
-
-sudo dnf install gstreamer1-{plugin-crystalhd,ffmpeg,plugins-{good,ugly,bad{,-free,-nonfree,-freeworld,-extras}{,-extras}}} libmpg123 lame-libs --setopt=strict=0 -y
-
-# GParted – partition management utility
-
-sudo dnf -y install gparted
-
-# Improved fonts. Enable the better fonts repo and then install the fonts.
-
-sudo dnf copr enable dawid/better_fonts
-
-sudo dnf install -y fontconfig-enhanced-defaults fontconfig-font-replacements
-
-Step 1: Add WineHQ repository
------------------------------
-
-Start by adding WineHQ repository with the latest stable packages for Wine.
-
-**Fedora 33:**
+		sudo dnf install -y snapd
+    
+		sudo ln -s /var/lib/snapd/snap /snap # for classic snap support
+    
+		sudo reboot now
 
 
-    sudo dnf -y install dnf-plugins-core
-    sudo dnf config-manager --add-repo https://dl.winehq.org/wine-builds/fedora/32/winehq.repo
+* The restart is needed to ensure snap’s paths are updated correctly. After the reboot, check whether there are any updates:
 
------------------------------------------------
+		sudo snap refresh
 
-Step 2: Install Wine 6 on Fedora 33/32/31/30/29
+>## Gnome Tweak Tool makes it easy to modify the system
+=====================================================
 
+		sudo dnf install -y gnome-tweak-tool
+
+>## VLC is a popular media player
+======================================
+		
+		sudo dnf install -y vlc
+-----
+* ##### Additional codecs to cover multimedia
+
+		sudo dnf install gstreamer1-{plugin-crystalhd,ffmpeg,plugins-{good,ugly,bad{,-free,-nonfree,-freeworld,-extras}{,-extras}}} libmpg123 lame-libs --setopt=strict=0 -y
+---
+>## GParted – partition management utility
+===================================================
+
+		sudo dnf -y install gparted
+
+># Improved fonts. 
+==============================
+
+* ##### Enable the better fonts repo and then install the fonts.
+
+		sudo dnf copr enable dawid/better_fonts
+
+		sudo dnf install -y fontconfig-enhanced-defaults fontconfig-font-replacements
+
+># Wine 
+### Step 1: Add WineHQ repository
+----------------------------------
+
+**Start by adding WineHQ repository with the latest stable packages for Wine.**
+
+    	sudo dnf -y install dnf-plugins-core
+    	
+		sudo dnf config-manager --add-repo https://dl.winehq.org/wine-builds/fedora/32-winehq.repo
+
+### Step 2: Install Wine 6 on Fedora 33/32/31/30/29
+---------------------------------------------------
 
 **Stable branch** – (**_Recommended_**)
 
-    sudo dnf -y install winehq-stable
+    	sudo dnf -y install winehq-stable
 
-# **Install Additional Desktop Environments**
-    sudo dnf grouplist -v hidden
-    sudo dnf install @cinnamon-desktop-environment @cinnamon-desktop @enlightenment-desktop @electronic-lab @platform-vmware
+># Install Additional Desktop Environments
+======================================================
 
-    sudo dnf copr enable kwizart/fedy  
-sudo dnf install fedy -y
+		sudo dnf grouplist -v hidden
+	
+		sudo dnf install @cinnamon-desktop-environment @cinnamon-desktop @enlightenment-desktop @electronic-lab @platform-vmware
 
-sudo dnf copr enable kwizart/fedy
-sudo dnf install fedy -y
+> # Install Fedy
+==============
 
-[![Effie Talor](https://miro.medium.com/fit/c/56/56/1*kNZNgLC6JrVe3ykC3xkCRQ.jpeg)](https://eftalor.medium.com/?source=post_page-----f68751eef156--------------------------------)
+		sudo dnf copr enable kwizart/fedy
+	
+		sudo dnf install fedy -y
 
-With the release of [Fedora 33](https://getfedora.org/en/workstation/download/) today, I have decided to go back to my roots and decided to remove Ubuntu for Fedora.
 
-You can say what you want on Ubuntu, but you have got to admit that it has quite a big community and hobby-developers that enables end users to easily install things or do tasks that are rather cumbersome on other Linux distributions. Not to mention the shitload of Ubuntu guides out there… Fedora lacks some of this, however if you are using Fedora I suppose that you more than just an average Linux user…
 
-Therefore, I have decided to come up with this guide, to give Fedora some love… So here we go!
 
-![Image for post](https://miro.medium.com/max/60/1*IVg0Zjt8-mnz6MUVfffF-Q.png?q=20)
 
-![Image for post](https://miro.medium.com/max/534/1*IVg0Zjt8-mnz6MUVfffF-Q.png)
 
-The Fedora Logo
-
-This one is driving me crazy, always…  
-I like to always have a text navigation bar.  
+-----
 **Tip**: to change it temporarily you can simply invoke _ctrl + l_
 
 > Before:
@@ -147,17 +169,13 @@ After:
 
 Open a terminal and invoke:
 
-> `$ gsettings set org.gnome.nautilus.preferences always-use-location-entry true`
+		gsettings set org.gnome.nautilus.preferences always-use-location-entry true
 
-Need I say more?
+		sudo dnf install [https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-33.noarch.rpm](https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-33.noarch.rpm)`
 
-Head over to [RPMFusion’s](https://rpmfusion.org/Configuration) configuration page, but you’re probably lazy so here you go:
-
-> `$ sudo dnf install [https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-33.noarch.rpm](https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-33.noarch.rpm)`
->
-> `$ sudo dnf install [https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-33.noarch.rpm](https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-33.noarch.rpm)`
-
-DNF is great and have come a long way since the days of Yum, it can be even better by enabling 3 of its plugins:
+		sudo dnf install [https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-33.noarch.rpm](https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-33.noarch.rpm)`
+----
+** DNF is great and have come a long way since the days of Yum, it can be even better by enabling 3 of its plugins:
 
 _fastestmirror_: Selects the fastest mirror server for the DNF updates
 
@@ -233,53 +251,23 @@ Your audio devices should now have a longer name specifying there is noise cance
 
 Oh, and if you feel like tweaking your web camera video settings:
 
-> `$ sudo dnf install guvcview`
+		sudo dnf install guvcview
+-----
+> #### Install full blown Google-ized Chrome. If you want to install a different version, change the package from -stable to -beta or -unstable.
 
-Gnome-software by itself already has flatpaks enabled by default, however for the the _flatpak_ command line tool it is not (and well, I like to do things from the terminal) so:
+	   	sudo dnf install fedora-workstation-repositories
 
-> `$ flatpak remote-add-if-not-exists flathub [https://flathub.org/repo/flathub.flatpakrepo](https://flathub.org/repo/flathub.flatpakrepo)`
+   		sudo dnf config-manager --set-enabled google-chrome
 
-Note: make sure you’ve installed the RPMFusion-nonfree!  
-Find more information in RPMFusion’s [Multimedia post-install page](https://rpmfusion.org/Configuration/#Multimedia_post-install)
+   		sudo dnf install -y google-chrome-stable
 
-> `sudo dnf groupupdate Multimedia`
-
-Well I don’t like it.. here’s the terminal command for disabling it , first command if for the mouse, the second one is for the touchpad (if you are using a laptop)  
-When you’re on a touch screen natural scrolling feels… natural, but it means that your mouse wheel is backwards.
-
-> `$ gsettings set org.gnome.desktop.peripherals.mouse natural-scroll false`  
-> `$ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false`
-
-And if for some reason you want it back… (why?!)
-
-> `$ gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true`  
-> `$ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true`
-
-That’s it! Enjoy your fresh Fedora 33 installation!  
-Hope you find some of the tips useful, questions? help? please comment!
-
-Update November 22nd:  
-Now that you’ve installed Fedora, how about improving your Gnome experience with [12 Must Have Gnome-Shell Extensions!](https://eftalor.medium.com/12-must-have-gnome-shell-extensions-1f04f09c4466)
-OR if you want to install full blown Google-ized Chrome. If you want to install a different version, change the package from -stable to -beta or -unstable.
-
-    sudo dnf install fedora-workstation-repositories
-
-    sudo dnf config-manager --set-enabled google-chrome
-
-    sudo dnf install -y google-chrome-stable
-
-### Fedy
-	sudo dnf copr enable kwizart/fedy
-
-	sudo dnf install fedy -y
-# VMware    
-    ### Installing Dependencies
-
-**Installing Required Packages**  
-With:
-    sudo dnf install kernel-headers kernel-devel gcc glibc-headers make libaio
-
-*   ### Setting Up VMware Workstation 16 Pro Installer
+># VMware    
+   
+   * **Installing Required Packages**
+   
+	sudo dnf install kernel-headers kernel-devel gcc glibc-headers make libaio
+		
+* **Setting Up VMware Workstation 16 Pro Installer**
 
     So now **Run VMware-Workstation Bundle**  
     Access the VMware Workstation Bundle Location:
@@ -439,8 +427,76 @@ Install Visual Studio Code in CentOS
 
 You can now proceed and start writing your code and installing your preferred extensions.
 
-## Fedora Media Writer – The fastest way to create Live-USB boot media
-
+> ## Fedora Media Writer – The fastest way to create Live-USB boot me
 ### For Fedora
 
 sudo dnf install liveusb-creator -y
+
+>### Setting up and running Jupyter
+
+First, install essential packages for Jupyter ([using](https://fedoramagazine.org/howto-use-sudo/) _[sudo](https://fedoramagazine.org/howto-use-sudo/)_):
+
+$ sudo dnf install python3-notebook mathjax sscg
+
+You might want to install additional and optional Python modules commonly used by data scientists:
+
+$ sudo dnf install python3-seaborn python3-lxml python3-basemap python3-scikit-image python3-scikit-learn python3-sympy python3-dask+dataframe python3-nltk
+
+Set a password to log into Notebook web interface and avoid those long tokens. Run the following command anywhere on your terminal:
+
+$ mkdir -p $HOME/.jupyter  
+$ jupyter notebook password
+
+Now, type a password for yourself. This will create the file _$HOME/.jupyter/jupyter\_notebook\_config.json_ with your encrypted password.
+
+Next, prepare for SSLby generating a self-signed HTTPS certificate for Jupyter’s web server:
+
+$ cd $HOME/.jupyter; sscg
+
+Finish configuring Jupyter by editing your _$HOME/.jupyter/jupyter\_notebook\_config.json_ file. Make it look like this:
+
+{  
+"NotebookApp": {  
+"password": "sha1:abf58...87b",  
+"ip": "\*",  
+"allow\_origin": "\*",  
+"allow\_remote\_access": true,  
+"open\_browser": false,  
+"websocket\_compression\_options": {},  
+"certfile": "/home/aviram/.jupyter/service.pem",  
+"keyfile": "/home/aviram/.jupyter/service-key.pem",  
+"notebook\_dir": "/home/aviram/Notebooks"  
+}  
+}
+
+The parts in red must be changed to match your folders. Parts in blue were already there after you created your password. Parts in green are the crypto-related files generated by _sscg_.
+
+Create a folder for your notebook files, as configured in the _notebook\_dir_ setting above:
+
+$ mkdir $HOME/Notebooks
+
+Now you are all set. Just run Jupyter Notebook from anywhere on your system by typing:
+
+$ jupyter notebook
+
+Or add this line to your _$HOME/.bashrc_ file to create a shortcut command called _jn_:
+
+alias jn='jupyter notebook'
+
+After running the command _jn_, access _https://your-fedora-host.com:8888_ from any browser on the network to see the Jupyter user interface. You’ll need to use the password you set up earlier. Start typing some Python code and markup text. This is how it looks:
+
+![](https://avi.alkalay.net/articlefiles/2018/07/jupyter-fedora.png)
+
+Jupyter with a simple notebook
+
+In addition to the IPython environment, you’ll also get a web-based Unix terminal provided by _terminado_. Some people might find this useful, while others find this insecure. You can disable this feature in the config file.
+
+JupyterLab — the next generation of Jupyter
+-------------------------------------------
+
+JupyterLab is the next generation of Jupyter, with a better interface and more control over your workspace. It’s currently not RPM-packaged for Fedora at the time of writing, but you can use _pip_ to get it installed easily:
+
+$ pip3 install jupyterlab --user  
+$ jupyter serverextension enable --py jupyterlab  
+
+Then run your regular _jupiter notebook_ command or _jn_ alias. JupyterLab will be accessible from _http://your-linux-host.com:8888/**lab**_.
