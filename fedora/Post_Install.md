@@ -3,7 +3,7 @@
 		
 		sudo dnf upgrade --refresh
 		
-		sudo dnf check
+		sudo dnf checknn
 		
 		sudo dnf autoremove
 		
@@ -500,3 +500,65 @@ $ pip3 install jupyterlab --user
 $ jupyter serverextension enable --py jupyterlab  
 
 Then run your regular _jupiter notebook_ command or _jn_ alias. JupyterLab will be accessible from _http://your-linux-host.com:8888/**lab**_.
+
+># Gping 
+
+### Installation instructions
+
+The [repo](https://copr.fedorainfracloud.org/coprs/atim/gping) currently provides gping for Fedora 32, 33, and Fedora Rawhide as well as for EPEL 7 and 8. To install it, use these commands:
+
+`sudo dnf copr enable atim/gping`
+`sudo dnf install gping`
+
+> # Blanket
+-------
+
+[Blanket](https://github.com/rafaelmardojai/blanket) is an application for playing background sounds, which may potentially improve your focus and increase your productivity. Alternatively, it may help you relax and fall asleep in a noisy environment. No matter what time it is or where you are, Blanket allows you to wake up while birds are chirping, work surrounded by friendly coffee shop chatter or distant city traffic, and then sleep like a log next to a fireplace while it is raining outside. Other popular choices for background sounds such as pink and white noise are also available.
+
+[![Blanket](https://github.com/FrostyX/fedora-magazine/raw/main/img/blanket.png)](https://github.com/FrostyX/fedora-magazine/blob/main/img/blanket.png)
+
+### [](https://github.com/FrostyX/fedora-magazine/blob/main/2020-december.md#installation-instructions)Installation instructions
+
+The [repo](https://copr.fedorainfracloud.org/coprs/tuxino/blanket/) currently provides Blanket for Fedora 32 and 33. To install it, use these commands:
+
+`sudo dnf copr enable tuxino/blanket`
+`sudo dnf install blanket`
+
+> # Bottom
+
+A cross-platform graphical process/system monitor with a customizable interface and a multitude of features. Supports Linux, macOS, and Windows. Inspired by both [gtop](https://github.com/aksakalli/gtop) and [gotop](https://github.com/cjbassi/gotop).
+
+[![Quick demo recording showing off searching, expanding, and process killing.](/ClementTsang/bottom/raw/master/assets/demo.gif)](/ClementTsang/bottom/blob/master/assets/demo.gif) _Theme based on [gruvbox](https://github.com/morhetz/gruvbox)_ (`--color gruvbox`). _Font is [IBM Plex Mono](https://www.ibm.com/plex/), terminal is [Kitty](https://sw.kovidgoyal.net/kitty/)._
+##### Description
+
+A cross-platform graphical process/system monitor with a customizable interface and a multitude of features. Supports Linux, macOS, and Windows. Inspired by both gtop and gotop.
+
+##### Installation Instructions
+
+    sudo dnf copr enable atim/bottom -y
+    sudo dnf install bottom
+	
+> ##
+Hierarchical note taking application.
+
+This is a stop-gap since cherrytree was removed from F31 but is a python2 application that upstream is rewriting in C++.
+
+The old python2 version will not work on Fedora 32 and beyond due to missing dependencies that quickly became more work than I was willing to take on. The C++ rewrite is available as `cherrytree-future` for now. I intend to bring that into the official repos when upstream is ready to call it released.
+
+>## Cherrytree 
+#### Installation Instructions
+---------
+
+To install, enable this COPR repo:
+
+	sudo dnf copr enable bcotton/cherrytree
+	
+Then install cherrytree:
+
+	sudo dnf install cherrytree
+
+Or! Install cherrytree-future (available on F32 and beyond. Older builds are available for F31, see comments below): 
+
+	sudo dnf install cherrytree-future
+
+For questions or help, file an [issue on GitHub](https://github.com/funnelfiasco/copr-cherrytree/issues) or comment on the [Discussion thread](https://discussion.fedoraproject.org/t/bcotton-cherrytree/10617)
