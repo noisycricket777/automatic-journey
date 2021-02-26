@@ -562,3 +562,45 @@ Or! Install cherrytree-future (available on F32 and beyond. Older builds are ava
 	sudo dnf install cherrytree-future
 
 For questions or help, file an [issue on GitHub](https://github.com/funnelfiasco/copr-cherrytree/issues) or comment on the [Discussion thread](https://discussion.fedoraproject.org/t/bcotton-cherrytree/10617)
+
+>>># *Cudy AC 1300 Driver Installation For Fedora* 
+
+`sudo dnf install dkms git`
+`cd rtl88x2bu` 
+`VER=$(sed -n 's/\\PACKAGE\_VERSION="\\(.\*\\)"/\\1/p' dkms.conf)`
+`sudo rsync -rvhP ./ /usr/src/rtl88x2bu-${VER}`
+`sudo dkms add -m rtl88x2bu -v ${VER}`
+`sudo dkms build -m rtl88x2bu -v ${VER}`
+`sudo dkms install -m rtl88x2bu -v ${VER}`
+`sudo modprobe 88x2bu`
+
+>>> ## Raspberry Pi Imager 
+> ### Fedora/RHEL/CentOS Linux
+
+#### Get dependencies
+
+Install the build dependencies:
+
+```
+sudo yum install git gcc gcc-c++ make cmake libarchive-devel libcurl-devel openssl-devel qt5-qtbase-devel qt5-qtquickcontrols2-devel qt5-qtsvg-devel qt5-linguist
+```
+
+#### [](https://github.com/raspberrypi/rpi-imager#get-the-source-1)
+
+#### Get the source
+
+```
+git clone --depth 1 https://github.com/raspberrypi/rpi-imager
+```
+
+#### [](https://github.com/raspberrypi/rpi-imager#build-and-install-the-software)
+
+#### Build and install the software
+
+```
+cd rpi-imager
+cmake .
+make
+sudo make install
+```
+
