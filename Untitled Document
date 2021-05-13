@@ -1,0 +1,1371 @@
+### Installation Steps
+
+Step 1: Open a terminal (Ctrl+Alt+T)
+
+Step 2: Update the system (select the option for the OS you are using)
+
+```
+    Option for Debian based distributions such as Ubuntu, Linux Mint, Kali and the Raspberry Pi OS
+
+    $ sudo apt-get update
+```
+
+```
+    Option for Arch based distributions such as Manjaro
+
+    $ sudo pacman -Syu
+```
+
+```
+    Option for Fedora based distributions
+
+    # sudo dnf -y update
+```
+
+Step 3: Install the required packages (select the option for the OS you are using)
+
+```
+    Option for Raspberry Pi OS
+
+    $ sudo apt-get install -y raspberrypi-kernel-headers bc build-essential dkms git
+```
+
+```
+    Option for Debian, Kali or Linux Mint Debian Edition (LMDE)
+
+    $ sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms git libelf-dev
+```
+
+```
+    Option for Ubuntu (all flavors) or Linux Mint
+
+    $ sudo apt-get install -y dkms git
+```
+
+```
+    Option for Arch or Manjaro
+
+    $ sudo pacman -S --noconfirm linux-headers dkms git
+```
+
+```
+    Option for Fedora
+
+    # sudo dnf -y install git dkms kernel-devel kernel-debug-devel
+```
+
+Step 4: Create a directory to hold the downloaded driver
+
+$ mkdir ~/src
+
+Step 5: Move to the newly created directory
+
+$ cd ~/src
+
+Step 6: Download the driver
+
+$ git clone https://github.com/morrownr/88x2bu.git
+
+Step 7: Move to the newly created driver directory
+
+$ cd ~/src/88x2bu
+
+Step 8: Warning: this step only applies if you are installing to Raspberry Pi _hardware_.
+
+Run a preparation script
+
+```
+    Option for 32 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi32.sh
+```
+
+```
+    Option for 64 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi64.sh
+```
+
+Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option)
+
+$ sudo ./install-driver.sh \[NoPrompt\]
+
+Step 10: Reboot
+
+$ sudo reboot
+
+### [](https://github.com/morrownr/88x2bu#driver-options)
+
+### Installation Steps
+
+Step 1: Open a terminal (Ctrl+Alt+T)
+
+Step 2: Update the system (select the option for the OS you are using)
+
+```
+    Option for Debian based distributions such as Ubuntu, Linux Mint, Kali and the Raspberry Pi OS
+
+    $ sudo apt-get update
+```
+
+```
+    Option for Arch based distributions such as Manjaro
+
+    $ sudo pacman -Syu
+```
+
+```
+    Option for Fedora based distributions
+
+    # sudo dnf -y update
+```
+
+Step 3: Install the required packages (select the option for the OS you are using)
+
+```
+    Option for Raspberry Pi OS
+
+    $ sudo apt-get install -y raspberrypi-kernel-headers bc build-essential dkms git
+```
+
+```
+    Option for Debian, Kali or Linux Mint Debian Edition (LMDE)
+
+    $ sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms git libelf-dev
+```
+
+```
+    Option for Ubuntu (all flavors) or Linux Mint
+
+    $ sudo apt-get install -y dkms git
+```
+
+```
+    Option for Arch or Manjaro
+
+    $ sudo pacman -S --noconfirm linux-headers dkms git
+```
+
+```
+    Option for Fedora
+
+    # sudo dnf -y install git dkms kernel-devel kernel-debug-devel
+```
+
+Step 4: Create a directory to hold the downloaded driver
+
+$ mkdir ~/src
+
+Step 5: Move to the newly created directory
+
+$ cd ~/src
+
+Step 6: Download the driver
+
+$ git clone https://github.com/morrownr/88x2bu.git
+
+Step 7: Move to the newly created driver directory
+
+$ cd ~/src/88x2bu
+
+Step 8: Warning: this step only applies if you are installing to Raspberry Pi _hardware_.
+
+Run a preparation script
+
+```
+    Option for 32 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi32.sh
+```
+
+```
+    Option for 64 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi64.sh
+```
+
+Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option)
+
+$ sudo ./install-driver.sh \[NoPrompt\]
+
+Step 10: Reboot
+
+$ sudo reboot
+
+### [](https://github.com/morrownr/88x2bu#driver-options)
+
+### Installation Steps
+
+Step 1: Open a terminal (Ctrl+Alt+T)
+
+Step 2: Update the system (select the option for the OS you are using)
+
+```
+    Option for Debian based distributions such as Ubuntu, Linux Mint, Kali and the Raspberry Pi OS
+
+    $ sudo apt-get update
+```
+
+```
+    Option for Arch based distributions such as Manjaro
+
+    $ sudo pacman -Syu
+```
+
+```
+    Option for Fedora based distributions
+
+    # sudo dnf -y update
+```
+
+Step 3: Install the required packages (select the option for the OS you are using)
+
+```
+    Option for Raspberry Pi OS
+
+    $ sudo apt-get install -y raspberrypi-kernel-headers bc build-essential dkms git
+```
+
+```
+    Option for Debian, Kali or Linux Mint Debian Edition (LMDE)
+
+    $ sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms git libelf-dev
+```
+
+```
+    Option for Ubuntu (all flavors) or Linux Mint
+
+    $ sudo apt-get install -y dkms git
+```
+
+```
+    Option for Arch or Manjaro
+
+    $ sudo pacman -S --noconfirm linux-headers dkms git
+```
+
+```
+    Option for Fedora
+
+    # sudo dnf -y install git dkms kernel-devel kernel-debug-devel
+```
+
+Step 4: Create a directory to hold the downloaded driver
+
+$ mkdir ~/src
+
+Step 5: Move to the newly created directory
+
+$ cd ~/src
+
+Step 6: Download the driver
+
+$ git clone https://github.com/morrownr/88x2bu.git
+
+Step 7: Move to the newly created driver directory
+
+$ cd ~/src/88x2bu
+
+Step 8: Warning: this step only applies if you are installing to Raspberry Pi _hardware_.
+
+Run a preparation script
+
+```
+    Option for 32 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi32.sh
+```
+
+```
+    Option for 64 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi64.sh
+```
+
+Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option)
+
+$ sudo ./install-driver.sh \[NoPrompt\]
+
+Step 10: Reboot
+
+$ sudo reboot
+
+### [](https://github.com/morrownr/88x2bu#driver-options)
+
+### Installation Steps
+
+Step 1: Open a terminal (Ctrl+Alt+T)
+
+Step 2: Update the system (select the option for the OS you are using)
+
+```
+    Option for Debian based distributions such as Ubuntu, Linux Mint, Kali and the Raspberry Pi OS
+
+    $ sudo apt-get update
+```
+
+```
+    Option for Arch based distributions such as Manjaro
+
+    $ sudo pacman -Syu
+```
+
+```
+    Option for Fedora based distributions
+
+    # sudo dnf -y update
+```
+
+Step 3: Install the required packages (select the option for the OS you are using)
+
+```
+    Option for Raspberry Pi OS
+
+    $ sudo apt-get install -y raspberrypi-kernel-headers bc build-essential dkms git
+```
+
+```
+    Option for Debian, Kali or Linux Mint Debian Edition (LMDE)
+
+    $ sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms git libelf-dev
+```
+
+```
+    Option for Ubuntu (all flavors) or Linux Mint
+
+    $ sudo apt-get install -y dkms git
+```
+
+```
+    Option for Arch or Manjaro
+
+    $ sudo pacman -S --noconfirm linux-headers dkms git
+```
+
+```
+    Option for Fedora
+
+    # sudo dnf -y install git dkms kernel-devel kernel-debug-devel
+```
+
+Step 4: Create a directory to hold the downloaded driver
+
+$ mkdir ~/src
+
+Step 5: Move to the newly created directory
+
+$ cd ~/src
+
+Step 6: Download the driver
+
+$ git clone https://github.com/morrownr/88x2bu.git
+
+Step 7: Move to the newly created driver directory
+
+$ cd ~/src/88x2bu
+
+Step 8: Warning: this step only applies if you are installing to Raspberry Pi _hardware_.
+
+Run a preparation script
+
+```
+    Option for 32 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi32.sh
+```
+
+```
+    Option for 64 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi64.sh
+```
+
+Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option)
+
+$ sudo ./install-driver.sh \[NoPrompt\]
+
+Step 10: Reboot
+
+$ sudo reboot
+
+### [](https://github.com/morrownr/88x2bu#driver-options)
+
+### Installation Steps
+
+Step 1: Open a terminal (Ctrl+Alt+T)
+
+Step 2: Update the system (select the option for the OS you are using)
+
+```
+    Option for Debian based distributions such as Ubuntu, Linux Mint, Kali and the Raspberry Pi OS
+
+    $ sudo apt-get update
+```
+
+```
+    Option for Arch based distributions such as Manjaro
+
+    $ sudo pacman -Syu
+```
+
+```
+    Option for Fedora based distributions
+
+    # sudo dnf -y update
+```
+
+Step 3: Install the required packages (select the option for the OS you are using)
+
+```
+    Option for Raspberry Pi OS
+
+    $ sudo apt-get install -y raspberrypi-kernel-headers bc build-essential dkms git
+```
+
+```
+    Option for Debian, Kali or Linux Mint Debian Edition (LMDE)
+
+    $ sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms git libelf-dev
+```
+
+```
+    Option for Ubuntu (all flavors) or Linux Mint
+
+    $ sudo apt-get install -y dkms git
+```
+
+```
+    Option for Arch or Manjaro
+
+    $ sudo pacman -S --noconfirm linux-headers dkms git
+```
+
+```
+    Option for Fedora
+
+    # sudo dnf -y install git dkms kernel-devel kernel-debug-devel
+```
+
+Step 4: Create a directory to hold the downloaded driver
+
+$ mkdir ~/src
+
+Step 5: Move to the newly created directory
+
+$ cd ~/src
+
+Step 6: Download the driver
+
+$ git clone https://github.com/morrownr/88x2bu.git
+
+Step 7: Move to the newly created driver directory
+
+$ cd ~/src/88x2bu
+
+Step 8: Warning: this step only applies if you are installing to Raspberry Pi _hardware_.
+
+Run a preparation script
+
+```
+    Option for 32 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi32.sh
+```
+
+```
+    Option for 64 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi64.sh
+```
+
+Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option)
+
+$ sudo ./install-driver.sh \[NoPrompt\]
+
+Step 10: Reboot
+
+$ sudo reboot
+
+### [](https://github.com/morrownr/88x2bu#driver-options)
+
+### Installation Steps
+
+Step 1: Open a terminal (Ctrl+Alt+T)
+
+Step 2: Update the system (select the option for the OS you are using)
+
+```
+    Option for Debian based distributions such as Ubuntu, Linux Mint, Kali and the Raspberry Pi OS
+
+    $ sudo apt-get update
+```
+
+```
+    Option for Arch based distributions such as Manjaro
+
+    $ sudo pacman -Syu
+```
+
+```
+    Option for Fedora based distributions
+
+    # sudo dnf -y update
+```
+
+Step 3: Install the required packages (select the option for the OS you are using)
+
+```
+    Option for Raspberry Pi OS
+
+    $ sudo apt-get install -y raspberrypi-kernel-headers bc build-essential dkms git
+```
+
+```
+    Option for Debian, Kali or Linux Mint Debian Edition (LMDE)
+
+    $ sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms git libelf-dev
+```
+
+```
+    Option for Ubuntu (all flavors) or Linux Mint
+
+    $ sudo apt-get install -y dkms git
+```
+
+```
+    Option for Arch or Manjaro
+
+    $ sudo pacman -S --noconfirm linux-headers dkms git
+```
+
+```
+    Option for Fedora
+
+    # sudo dnf -y install git dkms kernel-devel kernel-debug-devel
+```
+
+Step 4: Create a directory to hold the downloaded driver
+
+$ mkdir ~/src
+
+Step 5: Move to the newly created directory
+
+$ cd ~/src
+
+Step 6: Download the driver
+
+$ git clone https://github.com/morrownr/88x2bu.git
+
+Step 7: Move to the newly created driver directory
+
+$ cd ~/src/88x2bu
+
+Step 8: Warning: this step only applies if you are installing to Raspberry Pi _hardware_.
+
+Run a preparation script
+
+```
+    Option for 32 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi32.sh
+```
+
+```
+    Option for 64 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi64.sh
+```
+
+Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option)
+
+$ sudo ./install-driver.sh \[NoPrompt\]
+
+Step 10: Reboot
+
+$ sudo reboot
+
+### [](https://github.com/morrownr/88x2bu#driver-options)
+
+### Installation Steps
+
+Step 1: Open a terminal (Ctrl+Alt+T)
+
+Step 2: Update the system (select the option for the OS you are using)
+
+```
+    Option for Debian based distributions such as Ubuntu, Linux Mint, Kali and the Raspberry Pi OS
+
+    $ sudo apt-get update
+```
+
+```
+    Option for Arch based distributions such as Manjaro
+
+    $ sudo pacman -Syu
+```
+
+```
+    Option for Fedora based distributions
+
+    # sudo dnf -y update
+```
+
+Step 3: Install the required packages (select the option for the OS you are using)
+
+```
+    Option for Raspberry Pi OS
+
+    $ sudo apt-get install -y raspberrypi-kernel-headers bc build-essential dkms git
+```
+
+```
+    Option for Debian, Kali or Linux Mint Debian Edition (LMDE)
+
+    $ sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms git libelf-dev
+```
+
+```
+    Option for Ubuntu (all flavors) or Linux Mint
+
+    $ sudo apt-get install -y dkms git
+```
+
+```
+    Option for Arch or Manjaro
+
+    $ sudo pacman -S --noconfirm linux-headers dkms git
+```
+
+```
+    Option for Fedora
+
+    # sudo dnf -y install git dkms kernel-devel kernel-debug-devel
+```
+
+Step 4: Create a directory to hold the downloaded driver
+
+$ mkdir ~/src
+
+Step 5: Move to the newly created directory
+
+$ cd ~/src
+
+Step 6: Download the driver
+
+$ git clone https://github.com/morrownr/88x2bu.git
+
+Step 7: Move to the newly created driver directory
+
+$ cd ~/src/88x2bu
+
+Step 8: Warning: this step only applies if you are installing to Raspberry Pi _hardware_.
+
+Run a preparation script
+
+```
+    Option for 32 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi32.sh
+```
+
+```
+    Option for 64 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi64.sh
+```
+
+Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option)
+
+$ sudo ./install-driver.sh \[NoPrompt\]
+
+Step 10: Reboot
+
+$ sudo reboot
+
+### [](https://github.com/morrownr/88x2bu#driver-options)
+
+### Installation Steps
+
+Step 1: Open a terminal (Ctrl+Alt+T)
+
+Step 2: Update the system (select the option for the OS you are using)
+
+```
+    Option for Debian based distributions such as Ubuntu, Linux Mint, Kali and the Raspberry Pi OS
+
+    $ sudo apt-get update
+```
+
+```
+    Option for Arch based distributions such as Manjaro
+
+    $ sudo pacman -Syu
+```
+
+```
+    Option for Fedora based distributions
+
+    # sudo dnf -y update
+```
+
+Step 3: Install the required packages (select the option for the OS you are using)
+
+```
+    Option for Raspberry Pi OS
+
+    $ sudo apt-get install -y raspberrypi-kernel-headers bc build-essential dkms git
+```
+
+```
+    Option for Debian, Kali or Linux Mint Debian Edition (LMDE)
+
+    $ sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms git libelf-dev
+```
+
+```
+    Option for Ubuntu (all flavors) or Linux Mint
+
+    $ sudo apt-get install -y dkms git
+```
+
+```
+    Option for Arch or Manjaro
+
+    $ sudo pacman -S --noconfirm linux-headers dkms git
+```
+
+```
+    Option for Fedora
+
+    # sudo dnf -y install git dkms kernel-devel kernel-debug-devel
+```
+
+Step 4: Create a directory to hold the downloaded driver
+
+$ mkdir ~/src
+
+Step 5: Move to the newly created directory
+
+$ cd ~/src
+
+Step 6: Download the driver
+
+$ git clone https://github.com/morrownr/88x2bu.git
+
+Step 7: Move to the newly created driver directory
+
+$ cd ~/src/88x2bu
+
+Step 8: Warning: this step only applies if you are installing to Raspberry Pi _hardware_.
+
+Run a preparation script
+
+```
+    Option for 32 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi32.sh
+```
+
+```
+    Option for 64 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi64.sh
+```
+
+Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option)
+
+$ sudo ./install-driver.sh \[NoPrompt\]
+
+Step 10: Reboot
+
+$ sudo reboot
+
+### [](https://github.com/morrownr/88x2bu#driver-options)
+
+### Installation Steps
+
+Step 1: Open a terminal (Ctrl+Alt+T)
+
+Step 2: Update the system (select the option for the OS you are using)
+
+```
+    Option for Debian based distributions such as Ubuntu, Linux Mint, Kali and the Raspberry Pi OS
+
+    $ sudo apt-get update
+```
+
+```
+    Option for Arch based distributions such as Manjaro
+
+    $ sudo pacman -Syu
+```
+
+```
+    Option for Fedora based distributions
+
+    # sudo dnf -y update
+```
+
+Step 3: Install the required packages (select the option for the OS you are using)
+
+```
+    Option for Raspberry Pi OS
+
+    $ sudo apt-get install -y raspberrypi-kernel-headers bc build-essential dkms git
+```
+
+```
+    Option for Debian, Kali or Linux Mint Debian Edition (LMDE)
+
+    $ sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms git libelf-dev
+```
+
+```
+    Option for Ubuntu (all flavors) or Linux Mint
+
+    $ sudo apt-get install -y dkms git
+```
+
+```
+    Option for Arch or Manjaro
+
+    $ sudo pacman -S --noconfirm linux-headers dkms git
+```
+
+```
+    Option for Fedora
+
+    # sudo dnf -y install git dkms kernel-devel kernel-debug-devel
+```
+
+Step 4: Create a directory to hold the downloaded driver
+
+$ mkdir ~/src
+
+Step 5: Move to the newly created directory
+
+$ cd ~/src
+
+Step 6: Download the driver
+
+$ git clone https://github.com/morrownr/88x2bu.git
+
+Step 7: Move to the newly created driver directory
+
+$ cd ~/src/88x2bu
+
+Step 8: Warning: this step only applies if you are installing to Raspberry Pi _hardware_.
+
+Run a preparation script
+
+```
+    Option for 32 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi32.sh
+```
+
+```
+    Option for 64 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi64.sh
+```
+
+Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option)
+
+$ sudo ./install-driver.sh \[NoPrompt\]
+
+Step 10: Reboot
+
+$ sudo reboot
+
+### [](https://github.com/morrownr/88x2bu#driver-options)
+
+### Installation Steps
+
+Step 1: Open a terminal (Ctrl+Alt+T)
+
+Step 2: Update the system (select the option for the OS you are using)
+
+```
+    Option for Debian based distributions such as Ubuntu, Linux Mint, Kali and the Raspberry Pi OS
+
+    $ sudo apt-get update
+```
+
+```
+    Option for Arch based distributions such as Manjaro
+
+    $ sudo pacman -Syu
+```
+
+```
+    Option for Fedora based distributions
+
+    # sudo dnf -y update
+```
+
+Step 3: Install the required packages (select the option for the OS you are using)
+
+```
+    Option for Raspberry Pi OS
+
+    $ sudo apt-get install -y raspberrypi-kernel-headers bc build-essential dkms git
+```
+
+```
+    Option for Debian, Kali or Linux Mint Debian Edition (LMDE)
+
+    $ sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms git libelf-dev
+```
+
+```
+    Option for Ubuntu (all flavors) or Linux Mint
+
+    $ sudo apt-get install -y dkms git
+```
+
+```
+    Option for Arch or Manjaro
+
+    $ sudo pacman -S --noconfirm linux-headers dkms git
+```
+
+```
+    Option for Fedora
+
+    # sudo dnf -y install git dkms kernel-devel kernel-debug-devel
+```
+
+Step 4: Create a directory to hold the downloaded driver
+
+$ mkdir ~/src
+
+Step 5: Move to the newly created directory
+
+$ cd ~/src
+
+Step 6: Download the driver
+
+$ git clone https://github.com/morrownr/88x2bu.git
+
+Step 7: Move to the newly created driver directory
+
+$ cd ~/src/88x2bu
+
+Step 8: Warning: this step only applies if you are installing to Raspberry Pi _hardware_.
+
+Run a preparation script
+
+```
+    Option for 32 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi32.sh
+```
+
+```
+    Option for 64 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi64.sh
+```
+
+Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option)
+
+$ sudo ./install-driver.sh \[NoPrompt\]
+
+Step 10: Reboot
+
+$ sudo reboot
+
+### [](https://github.com/morrownr/88x2bu#driver-options)
+
+### Installation Steps
+
+Step 1: Open a terminal (Ctrl+Alt+T)
+
+Step 2: Update the system (select the option for the OS you are using)
+
+```
+    Option for Debian based distributions such as Ubuntu, Linux Mint, Kali and the Raspberry Pi OS
+
+    $ sudo apt-get update
+```
+
+```
+    Option for Arch based distributions such as Manjaro
+
+    $ sudo pacman -Syu
+```
+
+```
+    Option for Fedora based distributions
+
+    # sudo dnf -y update
+```
+
+Step 3: Install the required packages (select the option for the OS you are using)
+
+```
+    Option for Raspberry Pi OS
+
+    $ sudo apt-get install -y raspberrypi-kernel-headers bc build-essential dkms git
+```
+
+```
+    Option for Debian, Kali or Linux Mint Debian Edition (LMDE)
+
+    $ sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms git libelf-dev
+```
+
+```
+    Option for Ubuntu (all flavors) or Linux Mint
+
+    $ sudo apt-get install -y dkms git
+```
+
+```
+    Option for Arch or Manjaro
+
+    $ sudo pacman -S --noconfirm linux-headers dkms git
+```
+
+```
+    Option for Fedora
+
+    # sudo dnf -y install git dkms kernel-devel kernel-debug-devel
+```
+
+Step 4: Create a directory to hold the downloaded driver
+
+$ mkdir ~/src
+
+Step 5: Move to the newly created directory
+
+$ cd ~/src
+
+Step 6: Download the driver
+
+$ git clone https://github.com/morrownr/88x2bu.git
+
+Step 7: Move to the newly created driver directory
+
+$ cd ~/src/88x2bu
+
+Step 8: Warning: this step only applies if you are installing to Raspberry Pi _hardware_.
+
+Run a preparation script
+
+```
+    Option for 32 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi32.sh
+```
+
+```
+    Option for 64 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi64.sh
+```
+
+Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option)
+
+$ sudo ./install-driver.sh \[NoPrompt\]
+
+Step 10: Reboot
+
+$ sudo reboot
+
+### [](https://github.com/morrownr/88x2bu#driver-options)
+
+### Installation Steps
+
+Step 1: Open a terminal (Ctrl+Alt+T)
+
+Step 2: Update the system (select the option for the OS you are using)
+
+```
+    Option for Debian based distributions such as Ubuntu, Linux Mint, Kali and the Raspberry Pi OS
+
+    $ sudo apt-get update
+```
+
+```
+    Option for Arch based distributions such as Manjaro
+
+    $ sudo pacman -Syu
+```
+
+```
+    Option for Fedora based distributions
+
+    # sudo dnf -y update
+```
+
+Step 3: Install the required packages (select the option for the OS you are using)
+
+```
+    Option for Raspberry Pi OS
+
+    $ sudo apt-get install -y raspberrypi-kernel-headers bc build-essential dkms git
+```
+
+```
+    Option for Debian, Kali or Linux Mint Debian Edition (LMDE)
+
+    $ sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms git libelf-dev
+```
+
+```
+    Option for Ubuntu (all flavors) or Linux Mint
+
+    $ sudo apt-get install -y dkms git
+```
+
+```
+    Option for Arch or Manjaro
+
+    $ sudo pacman -S --noconfirm linux-headers dkms git
+```
+
+```
+    Option for Fedora
+
+    # sudo dnf -y install git dkms kernel-devel kernel-debug-devel
+```
+
+Step 4: Create a directory to hold the downloaded driver
+
+$ mkdir ~/src
+
+Step 5: Move to the newly created directory
+
+$ cd ~/src
+
+Step 6: Download the driver
+
+$ git clone https://github.com/morrownr/88x2bu.git
+
+Step 7: Move to the newly created driver directory
+
+$ cd ~/src/88x2bu
+
+Step 8: Warning: this step only applies if you are installing to Raspberry Pi _hardware_.
+
+Run a preparation script
+
+```
+    Option for 32 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi32.sh
+```
+
+```
+    Option for 64 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi64.sh
+```
+
+Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option)
+
+$ sudo ./install-driver.sh \[NoPrompt\]
+
+Step 10: Reboot
+
+$ sudo reboot
+
+### [](https://github.com/morrownr/88x2bu#driver-options)
+
+### Installation Steps
+
+Step 1: Open a terminal (Ctrl+Alt+T)
+
+Step 2: Update the system (select the option for the OS you are using)
+
+```
+    Option for Debian based distributions such as Ubuntu, Linux Mint, Kali and the Raspberry Pi OS
+
+    $ sudo apt-get update
+```
+
+```
+    Option for Arch based distributions such as Manjaro
+
+    $ sudo pacman -Syu
+```
+
+```
+    Option for Fedora based distributions
+
+    # sudo dnf -y update
+```
+
+Step 3: Install the required packages (select the option for the OS you are using)
+
+```
+    Option for Raspberry Pi OS
+
+    $ sudo apt-get install -y raspberrypi-kernel-headers bc build-essential dkms git
+```
+
+```
+    Option for Debian, Kali or Linux Mint Debian Edition (LMDE)
+
+    $ sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms git libelf-dev
+```
+
+```
+    Option for Ubuntu (all flavors) or Linux Mint
+
+    $ sudo apt-get install -y dkms git
+```
+
+```
+    Option for Arch or Manjaro
+
+    $ sudo pacman -S --noconfirm linux-headers dkms git
+```
+
+```
+    Option for Fedora
+
+    # sudo dnf -y install git dkms kernel-devel kernel-debug-devel
+```
+
+Step 4: Create a directory to hold the downloaded driver
+
+$ mkdir ~/src
+
+Step 5: Move to the newly created directory
+
+$ cd ~/src
+
+Step 6: Download the driver
+
+$ git clone https://github.com/morrownr/88x2bu.git
+
+Step 7: Move to the newly created driver directory
+
+$ cd ~/src/88x2bu
+
+Step 8: Warning: this step only applies if you are installing to Raspberry Pi _hardware_.
+
+Run a preparation script
+
+```
+    Option for 32 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi32.sh
+```
+
+```
+    Option for 64 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi64.sh
+```
+
+Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option)
+
+$ sudo ./install-driver.sh \[NoPrompt\]
+
+Step 10: Reboot
+
+$ sudo reboot
+
+### [](https://github.com/morrownr/88x2bu#driver-options)
+
+### Installation Steps
+
+Step 1: Open a terminal (Ctrl+Alt+T)
+
+Step 2: Update the system (select the option for the OS you are using)
+
+```
+    Option for Debian based distributions such as Ubuntu, Linux Mint, Kali and the Raspberry Pi OS
+
+    $ sudo apt-get update
+```
+
+```
+    Option for Arch based distributions such as Manjaro
+
+    $ sudo pacman -Syu
+```
+
+```
+    Option for Fedora based distributions
+
+    # sudo dnf -y update
+```
+
+Step 3: Install the required packages (select the option for the OS you are using)
+
+```
+    Option for Raspberry Pi OS
+
+    $ sudo apt-get install -y raspberrypi-kernel-headers bc build-essential dkms git
+```
+
+```
+    Option for Debian, Kali or Linux Mint Debian Edition (LMDE)
+
+    $ sudo apt-get install -y linux-headers-$(uname -r) build-essential dkms git libelf-dev
+```
+
+```
+    Option for Ubuntu (all flavors) or Linux Mint
+
+    $ sudo apt-get install -y dkms git
+```
+
+```
+    Option for Arch or Manjaro
+
+    $ sudo pacman -S --noconfirm linux-headers dkms git
+```
+
+```
+    Option for Fedora
+
+    # sudo dnf -y install git dkms kernel-devel kernel-debug-devel
+```
+
+Step 4: Create a directory to hold the downloaded driver
+
+$ mkdir ~/src
+
+Step 5: Move to the newly created directory
+
+$ cd ~/src
+
+Step 6: Download the driver
+
+$ git clone https://github.com/morrownr/88x2bu.git
+
+Step 7: Move to the newly created driver directory
+
+$ cd ~/src/88x2bu
+
+Step 8: Warning: this step only applies if you are installing to Raspberry Pi _hardware_.
+
+Run a preparation script
+
+```
+    Option for 32 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi32.sh
+```
+
+```
+    Option for 64 bit operating systems to be installed to Raspberry Pi hardware
+
+    $ sudo ./raspi64.sh
+```
+
+Step 9: Run the installation script (For automated builds - for example an RPM package or an image - use _NoPrompt_ as an option)
+
+$ sudo ./install-driver.sh \[NoPrompt\]
+
+Step 10: Reboot
+
+$ sudo reboot
+
+### [](https://github.com/morrownr/88x2bu#driver-options)
