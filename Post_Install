@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="UTF-8">
+ 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/androidstudio.min.css">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+ 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script src="https://unpkg.com/mermaid@7.1.2/dist/mermaid.min.js"></script>
+<style>
+@charset "utf-8";
+
+/**
+ * markdown.css
+ *
+ * This program is free software: you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation, either version 3 of the License, or (at your option) any
+ * later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ *
+ * You should have received a copy of the GNU Lesser General Public License
+ * along with this program. If not, see http://gnu.org/licenses/lgpl.txt.
+ *
+ * @project      Weblog and Open Source Projects of Florian Wolters
+ * @version      GIT: $Id$
+ * @package      xhtml-css
+ * @author       Florian Wolters <florian.wolters.85@googlemail.com>
+ * @copyright    2012 Florian Wolters
+ * @cssdoc       version 1.0-pre
+ * @license      http://gnu.org/licenses/lgpl.txt GNU Lesser General Public License
+ * @link         http://github.com/FlorianWolters/jekyll-bootstrap-theme
+ * @media        all
+ * @valid        true
+ */
+
+img {
+	max-width: 100%;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+table, th, td {
+	border: 1px solid #EAEAEA;
+	border-radius: 3px;
+	padding: 5px;
+}
+
+tr:nth-child(even) {
+	background-color: #F8F8F8;
+}
+
+body {
+    font-family: Helvetica, Arial, Freesans, clean, sans-serif;
+    padding:1em;
+    margin:auto;
+    max-width:42em;
+    background:#fefefe;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+}
+
+h1 {
+    color: #000000;
+    font-size: 28px;
+}
+
+h2 {
+    border-bottom: 1px solid #CCCCCC;
+    color: #000000;
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 14px;
+}
+
+h6 {
+    color: #777777;
+    background-color: inherit;
+    font-size: 14px;
+}
+
+hr {
+    height: 0.2em;
+    border: 0;
+    color: #CCCCCC;
+    background-color: #CCCCCC;
+}
+
+p, blockquote, ul, ol, dl, li, table, pre {
+    margin: 15px 0;
+}
+
+code, pre {
+    border-radius: 3px;
+    background-color: #F8F8F8;
+    color: inherit;
+}
+
+code {
+    border: 1px solid #EAEAEA;
+    margin: 0 2px;
+    padding: 0 5px;
+}
+
+pre {
+    border: 1px solid #CCCCCC;
+    line-height: 1.25em;
+    overflow: auto;
+    padding: 6px 10px;
+}
+
+pre > code {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+a, a:visited {
+    color: #4183C4;
+    background-color: inherit;
+    text-decoration: none;
+}
+
+
+figure figcaption {
+    text-align: center;
+    font-size: 12px;
+}
+</style>
+</head>
+<body>
+<div class="document">
+<div class="header"></div><div class="inner">
+<h3 id="toc_0.1">Install updates and reboot<a href="#install-updates-and-reboot"></a></h3>
+
+<hr>
+
+<pre><code>sudo dnf upgrade --refresh
+sudo dnf check
+sudo dnf autoremove
+sudo fwupdmgr get-devices
+sudo fwupdmgr refresh --force
+sudo fwupdmgr get-updates
+sudo fwupdmgr update
+sudo reboot now
+</code></pre>
+
+<hr>
+
+<h2 id="toc_1"></h2>
+
+<hr>
+
+<h3 id="toc_1.1">Enable RPM Fusion free/nonfree repos</h3>
+
+<p>sudo dnf install <a href="https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm">https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm</a> -E %fedora).noarch.rpm <a href="https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm">https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm</a> -E %fedora).noarch.rpm</p>
+
+<ul dir="auto">
+<li><p>to enable the RPM Fusion free and nonfree repositories. Afterwards I run</p>
+
+<p>sudo dnf upgrade --refresh
+sudo dnf groupupdate core
+sudo dnf install -y rpmfusion-free-release-tainted
+sudo dnf install -y dnf-plugins-core</p>
+
+<h2 id="toc_2">To enable DVD playback in Fedora, enable the Tainted RPM Fusion repository. After enabling, install the libdvdcss package.</h2>
+
+<p>sudo dnf install -y rpmfusion-free-release-tainted
+sudo dnf install -y libdvdcss</p></li>
+</ul>
+
+<h2 id="toc_3">The Nonfree Tainted repository contains software that may have ambiguous copyright or distribution rules. The firmware command will install additional drivers that help with hardware compatibility.</h2>
+
+<p>sudo dnf install -y rpmfusion-nonfree-release-tainted
+~sudo dnf install -y *-firmware~</p>
+
+<h2 id="toc_4">AppStream will display the RPM Fusion software in Gnome Software and KDE Discover.</h2>
+
+<p>sudo dnf -y groupupdate core</p>
+
+<h2 id="toc_5">The following command will adds packages for gstreamer enabled applications.</h2>
+
+<p>sudo dnf -y groupupdate multimedia --setop=<q>install_weak_deps=False</q> --exclude=PackageKit-gstreamer-plugin</p>
+
+<h2 id="toc_6">This package install complement packages needed by some applications for sound and video.</h2>
+
+<h2 id="toc_7">sudo dnf -y groupupdate sound-and-video</h2>
+
+<hr>
+
+<h2 id="toc_8">REALTEK RTL88x2B USB Linux Driver</h2>
+
+<h3 id="toc_8.1">Manual DKMS installation</h3>
+
+<pre><code>sudo git clone &quot;https://github.com/RinCat/RTL88x2BU-Linux-Driver.git&quot; /usr/src/rtl88x2bu-git
+sudo sed -i &#39;s/PACKAGE_VERSION=&quot;@PKGVER@&quot;/PACKAGE_VERSION=&quot;git&quot;/g&#39; /usr/src/rtl88x2bu-git/dkms.conf
+sudo dkms add -m rtl88x2bu -v git
+sudo dnf -y install git dkms kernel-devel kernel-debug-devel
+dkms autoinstall
+</code></pre>
+
+<hr>
+
+<h4 id="toc_8.1.1">Flatpak support<a href="#flatpak-support"></a></h4>
+
+<p>Flatpak is installed by default on Fedora Workstation, but one needs to enable the Flathub store:</p>
+
+<pre><code>flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak update
+</code></pre>
+
+<h4 id="toc_8.1.2">Snap support<a href="#snap-support"></a></h4>
+
+<p>Enabling snap support boils down to running the following commands:</p>
+
+<pre><code>sudo dnf install -y snapd
+sudo ln -s /var/lib/snapd/snap /snap # for classic snap support
+sudo reboot now
+</code></pre>
+
+<p>The restart is needed to ensure snap’s paths are updated correctly. After the reboot, check whether there are any updates:</p>
+
+<pre><code>sudo snap refresh
+</code></pre>
+
+<h2 id="toc_9">Gnome Tweak Tool makes it easy to modify the system</h2>
+
+<p>sudo dnf install -y gnome-tweak-tool</p>
+
+<h2 id="toc_10">VLC is a popular media player.</h2>
+
+<p>sudo dnf install -y vlc</p>
+
+<h2 id="toc_11">Additional codecs to cover multimedia</h2>
+
+<p>sudo dnf install gstreamer1-{plugin-crystalhd,ffmpeg,plugins-{good,ugly,bad{,-free,-nonfree,-freeworld,-extras}{,-extras}}} libmpg123 lame-libs --setopt=strict=0 -y</p>
+
+<h2 id="toc_12">GParted – partition management utility</h2>
+
+<p>sudo dnf -y install gparted</p>
+
+<h2 id="toc_13">Improved fonts. Enable the better fonts repo and then install the fonts.</h2>
+
+<p>sudo dnf copr enable dawid/better_fonts</p>
+
+<h3 id="toc_13.1">sudo dnf install -y fontconfig-enhanced-defaults fontconfig-font-replacements</h3>
+
+<h2 id="toc_14"><strong>Install Additional Desktop Environments</strong></h2>
+
+<pre><code>sudo dnf grouplist -v hidden
+sudo dnf install @cinnamon-desktop-environment @developer-workstation-environment @i3-desktop-environment @3d-printing @electronic-lab @i3 @i3-extended @platform-vmware @window-managers
+
+sudo dnf copr enable kwizart/fedy 
+sudo dnf install fedy -y
+</code></pre>
+
+<h4 id="toc_14.0.1">Setting up and running Jupyter</h4>
+
+<p>First, install essential packages for Jupyter (<a href="https://fedoramagazine.org/howto-use-sudo/">using</a> <u><a href="https://fedoramagazine.org/howto-use-sudo/">sudo</a></u>):</p>
+
+<pre><code>sudo dnf install -y python3-notebook mathjax sscg
+</code></pre>
+
+<p>You might want to install additional and optional Python modules commonly used by data scientists:</p>
+
+<pre><code>sudo dnf install -y python3-seaborn python3-lxml python3-basemap python3-scikit-image python3-scikit-learn python3-sympy python3-dask+dataframe python3-nltk
+</code></pre>
+
+<p>Set a password to log into Notebook web interface and avoid those long tokens. Run the following command anywhere on your terminal:</p>
+
+<pre><code>mkdir -p $HOME/.jupyter  
+jupyter notebook password
+</code></pre>
+
+<p>Now, type a password for yourself. This will create the file <u>$HOME/.jupyter/jupyter_notebook_config.json</u> with your encrypted password.</p>
+
+<p>Next, prepare for SSLby generating a self-signed HTTPS certificate for Jupyter’s web server:</p>
+
+<pre><code>cd $HOME/.jupyter; sscg
+</code></pre>
+
+<p>Finish configuring Jupyter by editing your <u>$HOME/.jupyter/jupyter_notebook_config.json</u> file. Make it look like this:</p>
+
+<p>{<br>
+   <q>NotebookApp</q>: {<br>
+     <q>password</q>: <q>sha1:abf58...87b</q>,<br>
+     <q>ip</q>: <q>*</q>,<br>
+     <q>allow_origin</q>: <q>*</q>,<br>
+     <q>allow_remote_access</q>: true,<br>
+     <q>open_browser</q>: false,<br>
+     <q>websocket_compression_options</q>: {},<br>
+     <q>certfile</q>: <q>/home/josh/.jupyter/service.pem</q>,<br>
+     <q>keyfile</q>: <q>/home/josh/.jupyter/service-key.pem</q>,<br>
+     <q>notebook_dir</q>: <q>/home/josh/Notebooks</q><br>
+   }<br>
+} </p>
+
+<p>The parts in red must be changed to match your folders. Parts in blue were already there after you created your password. Parts in green are the crypto-related files generated by <u>sscg</u>.</p>
+
+<p>Create a folder for your notebook files, as configured in the <u>notebook_dir</u> setting above:</p>
+
+<pre><code>mkdir $HOME/Notebooks
+</code></pre>
+
+<p>Now you are all set. Just run Jupyter Notebook from anywhere on your system by typing:</p>
+
+<pre><code>jupyter notebook
+</code></pre>
+
+<p>Or add this line to your <u>$HOME/.bashrc</u> file to create a shortcut command called <u>jn</u>:</p>
+
+<pre><code>alias jn=&#39;jupyter notebook&#39;
+</code></pre>
+
+<p>After running the command <u>jn</u>, access <u><a href="https://your-fedora-host.com:8888">https://your-fedora-host.com:8888</a></u> from any browser on the network to see the Jupyter user interface. You’ll need to use the password you set up earlier. Start typing some Python code and markup text. This is how it looks:</p>
+
+<p><img src="https://avi.alkalay.net/articlefiles/2018/07/jupyter-fedora.png" alt=""></p>
+
+<p>Jupyter with a simple notebook</p>
+
+<p>In addition to the IPython environment, you’ll also get a web-based Unix terminal provided by <u>terminado</u>. Some people might find this useful, while others find this insecure. You can disable this feature in the config file.</p>
+
+<h3 id="toc_14.1">JupyterLab — the next generation of Jupyter</h3>
+
+<p>JupyterLab is the next generation of Jupyter, with a better interface and more control over your workspace. It’s currently not RPM-packaged for Fedora at the time of writing, but you can use <u>pip</u> to get it installed easily:</p>
+
+<pre><code>pip3 install jupyterlab --user  
+jupyter serverextension enable --py jupyterlab  
+</code></pre>
+
+<p>Then run your regular <u>jupiter notebook</u> command or <u>jn</u> alias. JupyterLab will be accessible from _<a href="http://your-linux-host.com:8888/**lab**_">http://your-linux-host.com:8888/**lab**_</a>.</p>
+
+<h2 id="toc_15">Cherrytree</h2>
+
+<hr>
+
+<h3 id="toc_15.1">Quick Enable</h3>
+
+<pre><code>dnf copr enable bcotton/cherrytree
+</code></pre>
+
+<h4 id="toc_15.1.1">Description ----</h4>
+
+<p><i> ==== Hierarchical note taking application. ====</p>
+
+<p>This is a stop-gap since cherrytree was removed from F31 but is a python2 application that upstream is rewriting in C++.</p>
+
+<p>The old python2 version will not work on Fedora 32 and beyond due to missing dependencies that quickly became more work than I was willing to take on. The C++ rewrite is available as cherrytree-future for now. I intend to bring that into the official repos when upstream is ready to call it released.</p>
+
+<p><b> Installation Instructions:</b> </p>
+
+<ul dir="auto">
+<li><p>To install, enable this COPR repo:</p>
+
+<pre><code>sudo dnf copr enable bcotton/cherrytree
+</code></pre></li>
+<li><p>Then install cherrytree: </p>
+
+<pre><code>sudo dnf install cherrytree
+</code></pre></li>
+</ul>
+
+<p>Or! Install cherrytree-future (available on F32 and beyond. Older builds are available for F31, see comments below): sudo dnf install cherrytree-future
+</i></p>
+
+<p><a href="https://eftalor.medium.com/?source=post_page-----f68751eef156--------------------------------"><img src="https://miro.medium.com/fit/c/56/56/1*kNZNgLC6JrVe3ykC3xkCRQ.jpeg" alt="Effie Talor"></a></p>
+
+<p>With the release of <a href="https://getfedora.org/en/workstation/download/">Fedora 33</a> today, I have decided to go back to my roots and decided to remove Ubuntu for Fedora.</p>
+
+<p>You can say what you want on Ubuntu, but you have got to admit that it has quite a big community and hobby-developers that enables end users to easily install things or do tasks that are rather cumbersome on other Linux distributions. Not to mention the shitload of Ubuntu guides out there… Fedora lacks some of this, however if you are using Fedora I suppose that you more than just an average Linux user…</p>
+
+<p>Therefore, I have decided to come up with this guide, to give Fedora some love… So here we go!</p>
+
+<p><img src="https://miro.medium.com/max/60/1*IVg0Zjt8-mnz6MUVfffF-Q.png?q=20" alt="Image for post"></p>
+
+<p><img src="https://miro.medium.com/max/534/1*IVg0Zjt8-mnz6MUVfffF-Q.png" alt="Image for post"></p>
+
+<p>The Fedora Logo</p>
+
+<p>This one is driving me crazy, always…<br>
+I like to always have a text navigation bar.<br>
+<strong>Tip</strong>: to change it temporarily you can simply invoke <u>ctrl + l</u></p>
+
+<blockquote>
+<p>Before:</p>
+</blockquote>
+
+<p><img src="https://miro.medium.com/max/60/1*Ueel8HRnSOlr2myojVua1Q.png?q=20" alt="Image for post"></p>
+
+<p><img src="https://miro.medium.com/max/1834/1*Ueel8HRnSOlr2myojVua1Q.png" alt="Image for post"></p>
+
+<p>After:</p>
+
+<p><img src="https://miro.medium.com/max/60/1*PV4chMyNZ9tZxvj4Vln5Ig.png?q=20" alt="Image for post"></p>
+
+<p><img src="https://miro.medium.com/max/1930/1*PV4chMyNZ9tZxvj4Vln5Ig.png" alt="Image for post"></p>
+
+<p>Open a terminal and invoke:</p>
+
+<blockquote>
+<p><code>$ gsettings set org.gnome.nautilus.preferences always-use-location-entry true</code></p>
+</blockquote>
+
+<p>Need I say more?</p>
+
+<p>Head over to <a href="https://rpmfusion.org/Configuration">RPMFusion’s</a> configuration page, but you’re probably lazy so here you go:</p>
+
+<blockquote>
+<p><code>$ sudo dnf install [https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-33.noarch.rpm](https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-33.noarch.rpm)</code></p>
+
+<p><code>$ sudo dnf install [https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-33.noarch.rpm](https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-33.noarch.rpm)</code></p>
+</blockquote>
+
+<p>DNF is great and have come a long way since the days of Yum, it can be even better by enabling 3 of its plugins:</p>
+
+<p><u>fastestmirror</u>: Selects the fastest mirror server for the DNF updates</p>
+
+<p><u>deltarpm</u>: Instead of downloading the whole RPM update , it just downloads the portion of changed files since the previous update, can save on huge download.</p>
+
+<p><u>max_parallel_downloads</u>: DNF by default is set to 3 concurrent downloads, the max is 10 concurrent downloads. I would recommend to set it to 6</p>
+
+<p>Using your favorite editor, edit the DNF configuration file:</p>
+
+<blockquote>
+<p><code>/etc/dnf/dnf.conf</code></p>
+</blockquote>
+
+<p>Now, add these:</p>
+
+<blockquote>
+<p><code>fastestmirror=true  
+deltarpm=true  
+max_parallel_downloads=6</code></p>
+</blockquote>
+
+<p>On Ubuntu and others it is rather easy, but in Fedora it might be painful. There are quiet an amount of guides out there which all redirect to dead link to downloads fonts… However there is this way, provided by RPM Fusion (and is not much documented for a reason)</p>
+
+<blockquote>
+<p><code>$ sudo dnf install lpf-mscore-fonts lpf-cleartype-fonts</code></p>
+</blockquote>
+
+<p>This will install new graphical utilities:</p>
+
+<p><img src="https://miro.medium.com/max/60/1*hRxNHrqD9fpm1jpBZ6Zi0A.png?q=20" alt="Image for post"></p>
+
+<p><img src="https://miro.medium.com/max/710/1*hRxNHrqD9fpm1jpBZ6Zi0A.png" alt="Image for post"></p>
+
+<p>Go run them and follow the instructions.</p>
+
+<p>Edit: Nov 4th:<br>
+I found out there is an easier way to overcome the “ugly fonts” problem.<br>
+Enable this Copr repo and enable the installation of various fonts that will act as a replacement to proprietary fonts (ie MS) and will make browsers look better:</p>
+
+<p>sudo dnf copr enable dawid/better_fontssudo dnf install -y fontconfig-enhanced-defaults fontconfig-font-replacements</p>
+
+<p>Well, I am using Gmail and Gsuite with my browser, but I still want the feel of a local mail client sometimes… Fedora developers have knowingly decided not to include a mail client in Fedora. I get this… Thunderbird cowardly refuses to integrate with the OS it is installed on and looks different. Evolution is too bulky, but there’s one little client that should satisfy the average user:</p>
+
+<blockquote>
+<p><code>$ sudo dnf install geary</code></p>
+</blockquote>
+
+<p>I might have missed that, but installation had no choice for setting the hostname, but we can easily amend it by invoking the below:</p>
+
+<blockquote>
+<p><code>$ sudo hostnamectl set-hostname my-new-lovely-computer</code></p>
+</blockquote>
+
+<p>Starting Gnome 3.36 there’s an app for managing you extensions, which is strangely not installed by default on Fedora</p>
+
+<blockquote>
+<p><code>$ sudo dnf install gnome-extensions-app</code></p>
+</blockquote>
+
+<p>(and if we&#39;re at it, let’s also install gnome-tweaks though it is somewhat redundant by now…)</p>
+
+<blockquote>
+<p><code>$ sudo dnf _install_ gnome-tweaks</code></p>
+</blockquote>
+
+<p>Recently I have found out that PulseAudio (the sound server) has an option to do echo and noise cancellation, I think it is kinda handy it these Zoom-infused times.</p>
+
+<p>Using you favorite editor, edit the PulseAudio configuration file:</p>
+
+<blockquote>
+<p><code>/etc/pulse/default.pa</code></p>
+</blockquote>
+
+<p>Add this somewhere in the file (its end is probably good)</p>
+
+<p>.ifexists module-echo-cancel.so<br>
+load-module module-echo-cancel aec_method=webrtc source_name=echocancel sink_name=echocancel1<br>
+set-default-source echocancel<br>
+set-default-sink echocancel1<br>
+.endif</p>
+
+<p>Now we need to kill PulseAudio (it will restart automatically)</p>
+
+<blockquote>
+<p><code>$ pulseaudio -k</code></p>
+</blockquote>
+
+<p>Your audio devices should now have a longer name specifying there is noise cancellation:</p>
+
+<p><img src="https://miro.medium.com/max/1030/1*GyV_hhlf-3T1vriNrCz_qQ.png" alt="Image for post"></p>
+
+<p>Oh, and if you feel like tweaking your web camera video settings:</p>
+
+<blockquote>
+<p><code>$ sudo dnf install guvcview</code></p>
+</blockquote>
+
+<p>Gnome-software by itself already has flatpaks enabled by default, however for the the <u>flatpak</u> command line tool it is not (and well, I like to do things from the terminal) so:</p>
+
+<blockquote>
+<p><code>$ flatpak remote-add-if-not-exists flathub [https://flathub.org/repo/flathub.flatpakrepo](https://flathub.org/repo/flathub.flatpakrepo)</code></p>
+</blockquote>
+
+<p>Note: make sure you’ve installed the RPMFusion-nonfree!<br>
+Find more information in RPMFusion’s <a href="https://rpmfusion.org/Configuration/#Multimedia_post-install">Multimedia post-install page</a></p>
+
+<blockquote>
+<p><code>sudo dnf groupupdate Multimedia</code></p>
+</blockquote>
+
+<p>Well I don’t like it.. here’s the terminal command for disabling it , first command if for the mouse, the second one is for the touchpad (if you are using a laptop)<br>
+When you’re on a touch screen natural scrolling feels… natural, but it means that your mouse wheel is backwards.</p>
+
+<blockquote>
+<p><code>$ gsettings set org.gnome.desktop.peripherals.mouse natural-scroll false</code><br>
+<code>$ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll false</code></p>
+</blockquote>
+
+<p>And if for some reason you want it back… (why?!)</p>
+
+<blockquote>
+<p><code>$ gsettings set org.gnome.desktop.peripherals.mouse natural-scroll true</code><br>
+<code>$ gsettings set org.gnome.desktop.peripherals.touchpad natural-scroll true</code></p>
+</blockquote>
+
+<p>That’s it! Enjoy your fresh Fedora 33 installation!<br>
+Hope you find some of the tips useful, questions? help? please comment!</p>
+
+<p>Update November 22nd:<br>
+Now that you’ve installed Fedora, how about improving your Gnome experience with <a href="https://eftalor.medium.com/12-must-have-gnome-shell-extensions-1f04f09c4466">12 Must Have Gnome-Shell Extensions!</a>
+OR if you want to install full blown Google-ized Chrome. If you want to install a different version, change the package from -stable to -beta or -unstable.</p>
+
+<pre><code>sudo dnf install fedora-workstation-repositories
+
+sudo dnf config-manager --set-enabled google-chrome
+
+sudo dnf install -y google-chrome-stable
+</code></pre>
+
+<h4 id="toc_15.1.2">Fedy</h4>
+
+<pre><code>sudo dnf copr enable kwizart/fedy
+
+sudo dnf install fedy -y
+</code></pre>
+
+<h2 id="toc_16">VMware</h2>
+
+<h3 id="toc_16.1"><strong>Installing Required Packages</strong></h3>
+
+<p>With:</p>
+
+<pre><code>sudo dnf install kernel-headers kernel-devel gcc glibc-headers make libaio
+</code></pre>
+
+<ul dir="auto">
+<li><h4 id="toc_16.1.1">Setting Up VMware Workstation 16 Pro Installer</h4>
+
+<p>So now <strong>Run VMware-Workstation Bundle</strong><br>
+Access the VMware Workstation Bundle Location:</p>
+
+<p>Copy</p>
+
+<p>cd $HOME/Downloads</p>
+
+<p>Give Execution Permissions:</p>
+
+<p>Copy</p>
+
+<p>chmod +x ./VMware-Workstation*16*.bundle</p>
+
+<p>Then Run the VMware Workstation Bundle:</p>
+
+<p>Copy</p>
+
+<p>sudo ./VMware-Workstation*16*.bundle</p>
+
+<p>With this Take the Time and leave the Setup to Make all required Components.</p></li>
+<li><p>### 5. Starting VMware Workstation 16 Pro Installer</p>
+
+<p>Now <strong>Launch VMware Workstation 16 Pro Wizard</strong><br>
+From Command Line with:</p>
+
+<p>Copy</p>
+
+<p>vmware</p>
+
+<p>Accept the Licenses:</p>
+
+<p><img src="https://mediaw.tutorialforlinux.com/software/vmware/workstation/pro/16/installer/1-endUserLicense.png" alt="VMware Workstation 16 Pro Fedora 33 Installation - Accept Licenses"></p>
+
+<p><img src="https://mediaw.tutorialforlinux.com/software/vmware/workstation/pro/16/installer/1-endUserLicense.png" alt="VMware Workstation 16 Pro Fedora 33 Installation - Accept Licenses"></p>
+
+<p>Next Choose if partecipating to VMware CEIP:<br>
+<img src="https://mediaw.tutorialforlinux.com/software/vmware/workstation/pro/16/installer/2-ceipProgram.png" alt="VMware Workstation 16 Pro Fedora 33 Installation - Customer Experience Improvement Program"></p>
+
+<p><img src="https://mediaw.tutorialforlinux.com/software/vmware/workstation/pro/16/installer/2-ceipProgram.png" alt="VMware Workstation 16 Pro Fedora 33 Installation - Customer Experience Improvement Program"></p>
+
+<p>Possibly Insert the <strong>License Key</strong> if Already have One:<br>
+(You can always give it in a next time)<br>
+<img src="https://mediaw.tutorialforlinux.com/software/vmware/workstation/pro/16/installer/3-licenseKey.png" alt="VMware Workstation 16 Pro Fedora 33 Installation - Insert License Key"></p>
+
+<p><img src="https://mediaw.tutorialforlinux.com/software/vmware/workstation/pro/16/installer/3-licenseKey.png" alt="VMware Workstation 16 Pro Fedora 33 Installation - Insert License Key"></p>
+
+<p>Then automatically <strong>Start Installation</strong> and in a few while it should be Successfully Achieved!</p>
+
+<p>ZF3R0-FHED2-M80TY-8QYGC-NPKYF</p></li>
+</ul>
+
+<h3 id="toc_16.2">PacketTracer on Fedora 31 Workstation</h3>
+
+<ul dir="auto">
+<li><p>Log into the Fedora GNOME Desktop<br>
+Remove old version of PacketTracer (if necessary):<br>
+rm -rf /opt/pt<br>
+rm -rf /usr/share/applications/cisco-pt.desktop<br>
+rm -rf /usr/share/applications/cisco-ptsa.desktop<br>
+rm -rf /usr/share/icons/hicolor/48x48/apps/pt.png</p></li>
+<li><p>Download from the netacad web site the PacketTracer_730_amd64.deb package.</p></li>
+<li><p>Open a terminal :<br>
+mkdir -p tmp/pt800<br>
+copy the <code>ar -xv PacketTracer_800_amd64_build212_final.deb</code> package to tmp/pt800</p></li>
+<li><p>We’re going to extract the deb file in this folder:<br>
+cd tmp/pt800<br>
+ar -xv PacketTracer_800_amd64_build212_final.deb
+mkdir control<br>
+tar -C control -Jxf control.tar.xz<br>
+mkdir data<br>
+tar -C data -Jxf data.tar.xz</p></li>
+<li><p>Copy PacketTracer files to install it:<br>
+cd data<br>
+sudo cp -r usr /<br>
+sudo cp -r opt /</p></li>
+<li><p>Configure Gnome Environment:<br>
+sudo xdg-desktop-menu install /usr/share/applications/cisco-pt.desktop<br>
+sudo xdg-desktop-menu install /usr/share/applications/cisco-ptsa.desktop<br>
+sudo update-mime-database /usr/share/mime<br>
+sudo gtk-update-icon-cache --force --ignore-theme-index /usr/share/icons/gnome<br>
+sudo xdg-mime default cisco-ptsa7.desktop x-scheme-handler/pttp<br>
+sudo ln -sf /opt/pt/packettracer /usr/local/bin/packettracer</p></li>
+</ul>
+
+<h4 id="toc_16.2.1">Chromecast Using Terminal</h4>
+
+<p>You can use your terminal to cast your files to a TV. You may cast local files or YouTube videos.</p>
+
+<p><strong><u>Step 1:</u></strong> Open your terminal</p>
+
+<p><u><strong>Step 2:</strong></u> Install mkchromecast. I already have this installed, and you can install it using the following terminal command:</p>
+
+<p>$ sudo apt install mkchromecast</p>
+
+<p><strong><u>Step 3:</u></strong> Enter the below command to see a list of available networks. In the top right corner, you will be able to see a new Chromecast icon. Click the icon and select your TV.</p>
+
+<p>$ mkchromecast -t</p>
+
+<p>[<img src="https://linuxhint.com/wp-content/uploads/2020/05/4-36.png" alt=""></p>
+
+<p><img src="https://linuxhint.com/wp-content/uploads/2020/05/4-36.png" alt=""></p>
+
+<p>](<a href="https://linuxhint.com/wp-content/uploads/2020/05/4-36.png">https://linuxhint.com/wp-content/uploads/2020/05/4-36.png</a>)</p>
+
+<p>If you are unable to see any devices, select the “Search for Media Streaming Devices” option.</p>
+
+<p><strong><u>Step 4:</u></strong> To cast media to the selected device, use the following commands:</p>
+
+<p>For local files:</p>
+
+<p>$ mkchromecast --video -i /home/videos/cast.mp4</p>
+
+<p>You may replace “/home/videos/cast.mp4” with the path of your own local video file.</p>
+
+<h4 id="toc_16.2.2">How to Install Visual Studio Code on CentOS, RHEL, and Fedora</h4>
+
+<p>The procedure of installing <strong>Visual Studio Code</strong> on RedHat based distributions is pretty much like <strong>Ubuntu</strong>. Right off the bat, launch your terminal and update your system:</p>
+
+<p>$ sudo dnf update</p>
+
+<p>Next, import Microsoft’s GPG key using the <a href="https://www.tecmint.com/20-practical-examples-of-rpm-commands-in-linux/" title="20 Practical Examples of RPM Commands in Linux">rpm command</a> below:</p>
+
+<p>$ sudo rpm --import <a href="https://packages.microsoft.com/keys/microsoft.asc">https://packages.microsoft.com/keys/microsoft.asc</a></p>
+
+<p>With Microsoft’s GPG key in place, proceed and create the repository file for <strong>Visual Studio Code</strong>:</p>
+
+<p>$ sudo vim /etc/yum.repos.d/vstudio_code.repo</p>
+
+<p>Next, append the code below and save the file:</p>
+
+<p>[code]
+name=Visual Studio Code
+baseurl=<a href="https://packages.microsoft.com/yumrepos/vscode">https://packages.microsoft.com/yumrepos/vscode</a>
+enabled=1
+gpgcheck=1
+gpgkey=<a href="https://packages.microsoft.com/keys/microsoft.asc">https://packages.microsoft.com/keys/microsoft.asc</a></p>
+
+<p>To install Visual Studio code, run the command:</p>
+
+<p>$ sudo dnf install code</p>
+
+<p>To use it, use the Application manager to search the <strong>Visual Studio Code</strong> and launch it, you will get a window as shown below.</p>
+
+<p>[<img src="https://www.tecmint.com/wp-content/uploads/2020/05/Install-Visual-Studio-Code-in-CentOS.png" alt="Install Visual Studio Code in CentOS"></p>
+
+<p><img src="https://www.tecmint.com/wp-content/uploads/2020/05/Install-Visual-Studio-Code-in-CentOS.png" alt="Install Visual Studio Code in CentOS"></p>
+
+<p>](<a href="https://www.tecmint.com/wp-content/uploads/2020/05/Install-Visual-Studio-Code-in-CentOS.png">https://www.tecmint.com/wp-content/uploads/2020/05/Install-Visual-Studio-Code-in-CentOS.png</a>)</p>
+
+<p>Install Visual Studio Code in CentOS</p>
+
+<p>You can now proceed and start writing your code and installing your preferred extensions.</p>
+
+<h3 id="toc_16.3">Step 1: Add WineHQ repository</h3>
+
+<p>Start by adding WineHQ repository with the latest stable packages for Wine.</p>
+
+<p><strong>Fedora 33:</strong></p>
+
+<pre><code>sudo dnf -y install dnf-plugins-core
+sudo dnf config-manager --add-repo https://dl.winehq.org/wine-builds/fedora/32/winehq.repo
+</code></pre>
+
+<hr>
+
+<p>Step 2: Install Wine 6 on Fedora 33/32/31/30/29</p>
+
+<p><strong>Stable branch</strong> – (<strong><u>Recommended</u></strong>)</p>
+
+<pre><code>sudo dnf -y install winehq-stable
+</code></pre>
+
+<h3 id="toc_16.4">Fedora Media Writer – The fastest way to create Live-USB boot media</h3>
+
+<h4 id="toc_16.4.1">For Fedora</h4>
+
+<p>sudo dnf install liveusb-creator -y</p>
+
+<h3 id="toc_16.5">How to List Installed Packages with YUM</h3>
+
+<p>YUM stands for Yellowdog Updater, Modified. It is an updated package manager that allows you to install, remove, update, view, or search software packages.</p>
+
+<p>Use the following <strong><code>yum</code></strong> command  to display all installed packages:</p>
+
+<pre><code>sudo yum list installed
+</code></pre>
+
+<p>To check if a specific package is installed with YUM, filter the output with the <a href="https://phoenixnap.com/kb/grep-command-linux-unix-examples"><strong><code>grep</code></strong> command</a>:</p>
+
+<pre><code>sudo yum list installed | grep xorg
+</code></pre>
+
+<p><img src="https://phoenixnap.com/kb/wp-content/uploads/2019/04/yum-command-list-grep-xorg.jpg" alt="terminal yum list packages command with grep"></p>
+
+<p><img src="https://phoenixnap.com/kb/wp-content/uploads/2019/04/yum-command-list-grep-xorg.jpg" alt="terminal yum list packages command with grep"></p>
+
+<p>To display the details on a particular package with YUM:</p>
+
+<pre><code>yum info httpd
+</code></pre>
+
+<p><img src="https://phoenixnap.com/kb/wp-content/uploads/2019/04/yum-command-info.jpg" alt="terminal with yum info command"></p>
+
+<p><img src="https://phoenixnap.com/kb/wp-content/uploads/2019/04/yum-command-info.jpg" alt="terminal with yum info command"></p>
+
+<p>YUM can also output the full package list to a file:</p>
+
+<pre><code>sudo yum list installed &gt; listed_packages.txt
+</code></pre>
+
+<p>This file can be copied to another system to duplicate the installed packages:</p>
+
+<pre><code>sudo yum –y install $(cat listed_packages.txt)
+</code></pre>
+
+<ul dir="auto">
+<li>  The <strong><code>–y</code></strong> option answers <u>yes</u> to all installation prompts</li>
+<li>  The <strong><code>cat</code></strong> command concatenates the contents of the file into the yum install command</li>
+</ul>
+
+<p>For more information on the yum command, use <strong><code>yum ––help</code>.</strong></p>
+
+<h3 id="toc_16.6">List Installed Packages with RPM</h3>
+
+<p>RPM stands for RedHat Package Manager. It comes as standard with most Red-Hat-based Linux operating systems, such as CentOS and Fedora.</p>
+
+<p>To display a list of installed packages, enter the following in a terminal window:</p>
+
+<pre><code>sudo rpm –qa
+</code></pre>
+
+<ul dir="auto">
+<li>  The <strong><code>–q</code></strong> option means query</li>
+<li>  The <strong><code>–a</code></strong> option means all</li>
+</ul>
+
+<p>To list packages by installation date, enter:</p>
+
+<pre><code>sudo rpm –qa ––last
+</code></pre>
+
+<p>Search for a package by name using:</p>
+
+<pre><code>sudo rpm –qa | grep –i httpd
+</code></pre>
+
+<p>This command returns results for the Apache software.</p>
+
+<p>Output the list of packages to a file by entering the following:</p>
+
+<pre><code>sudo rpm –qa &gt; listed_packages.txt
+</code></pre>
+
+<p>This command saves a copy of the list in a text file called <u>listed_packages.txt</u> in the current working directory.</p>
+
+<p>Display information about a particular package:</p>
+
+<pre><code>rpm –qi httpd
+</code></pre>
+
+<ul dir="auto">
+<li>  The <strong><code>–q</code></strong> option stands for query</li>
+<li>  The <strong><code>–i</code></strong> option stands for info</li>
+</ul>
+
+<p>Count the total number of packages installed:</p>
+
+<pre><code>sudo rpm –qa | wc –l
+</code></pre>
+
+<ul dir="auto">
+<li>  The <strong><code>wc</code></strong> command creates a word count</li>
+<li>  The <strong><code>–l</code></strong> option counts the number of lines</li>
+</ul>
+
+<p><img src="https://phoenixnap.com/kb/wp-content/uploads/2019/04/rpm-command-list-packages.jpg" alt="terminal with rpm wc command"></p>
+
+<p><img src="https://phoenixnap.com/kb/wp-content/uploads/2019/04/rpm-command-list-packages.jpg" alt="terminal with rpm wc command"></p>
+
+<p>RPM lists packages by their package name and revision number. Text-wrapping can make this tool harder to read. Use the <strong><code>rpm ––help</code></strong> command for more options, or refer to the documentation.</p>
+
+<h3 id="toc_16.7">List Installed Packages with yum-utils</h3>
+
+<p><strong>Yum-utils</strong> is a software package that adds functionality to the standard YUM package manager.</p>
+
+<p>To install the <strong>yum-utils</strong> software package enter:</p>
+
+<pre><code>sudo yum –y install yum-utils
+</code></pre>
+
+<p>List all installed packages with the <strong><code>repoquery</code></strong> command:</p>
+
+<pre><code>sudo repoquery –a ––installed
+</code></pre>
+
+<p>The <strong>yum-utils</strong> package uses <a href="https://phoenixnap.com/kb/create-local-yum-repository-centos">yum repositories</a> to pull information.</p>
+
+<p><a href="http://meshlab.sourceforge.net/">MeshLab</a> (</p>
+
+<p>meshlab</p>
+
+<p>package) or <a href="https://github.com/admesh/ADMeshGUI">ADMeshGUI</a> (available from a <a href="https://copr.fedoraproject.org/coprs/churchyard/admesh/">Copr repository</a>).</p>
+
+<p><img src="https://fedoramagazine.org/wp-content/uploads/2015/07/admeshgui.png" alt="ADMeshGUI with our STL file"></p>
+
+<p>ADMeshGUI with our STL file</p>
+
+<p><u><strong>Note:</strong> OpenSCAD, as well as STL file format, uses no units. In the 3D printing area, the numbers used are usually considered millimeters, although you might find some files online using some non-standard units such as inches.</u></p>
+
+<h4 id="toc_16.7.1">Slicing to layers</h4>
+
+<p>For the object to be printed it has to be sliced to layers and paths for the 3D printer’s nozzle. There are various apps available in Fedora capable of doing it, one of the most famous tools for this is <a href="http://slic3r.org/">Slic3r</a> (package</p>
+
+<p>slic3r</p>
+
+<p>, <a href="https://copr.fedoraproject.org/coprs/churchyard/slic3r-latest/">newer version available from Copr</a>).</p>
+
+<p><a href="https://fedoramagazine.org/wp-content/uploads/2015/07/slic3r.png"><img src="https://fedoramagazine.org/wp-content/uploads/2015/07/slic3r-1024x499.png" alt="Slic3r with our STL file loaded"></a></p>
+
+<p>Slic3r with our STL file loaded</p>
+
+<p>For right result, it is crucial to have the correct slicer settings for your printer and material. You should obtain those from the whoever you’ve obtained your 3D printer (or just create your settings if you have built one yourself). When you select the right settings, just click <u>Export G-code…</u> to generate file with instructions for the printer.</p>
+
+<p><img src="https://fedoramagazine.org/wp-content/uploads/2015/07/slic3r129.png" alt="Slic3r 1.2.9 from Copr repository with G-code preview"></p>
+
+<p>Slic3r 1.2.9 from Copr repository with G-code preview</p>
+
+<p>The <a href="https://en.wikipedia.org/wiki/G-code">G-Code</a> file is just a plain text with loads of numerical control commands. Here is a snip:</p>
+
+<p>G21 ; set units to millimeters
+M107
+M190 S60 ; wait for bed temperature to be reached
+M109 S195
+G28 ; home all axes
+G92 E0  ;reset extruder
+G90 ; use absolute coordinates
+M83 ; use relative distances for extrusion
+G1 F1800.000 E-1.00000
+G1 Z0.300 F7800.000
+G1 X77.706 Y77.667 F7800.000
+G1 E1.00000 F1800.000
+G1 X78.476 Y76.924 E0.07695 F1800.000
+G1 X79.209 Y76.261 E0.07110
+G1 X79.963 Y75.622 E0.07108
+G1 X80.743 Y75.000 E0.07179
+G1 X81.533 Y74.412 E0.07080
+G1 X82.348 Y73.843 E0.07150
+G1 X83.178 Y73.301 E0.07131
+G1 X84.025 Y72.786 E0.07133
+G1 X84.891 Y72.296 E0.07151
+G1 X85.766 Y71.836 E0.07110
+G1 X86.655 Y71.404 E0.07115
+G1 X87.562 Y70.998 E0.07148
+...</p>
+
+<h4 id="toc_16.7.2">Printing</h4>
+
+<p>With the gcode file, all that’s left to do is to feed those numerical control commands to the 3D printer. Some printers might have the ability to print from an SD card, others have to be connected by an USB cable during the entire print. To control you printer from Fedora, you might use Pronterface tool from <a href="https://github.com/kliment/Printrun">Printrun</a> (install the</p>
+
+<p>pronterface</p>
+
+<p>or</p>
+
+<p>printrun</p>
+
+<p>package). To communicate with the printer, you’re user has to be in the</p>
+
+<p>dialout</p>
+
+<p>group.</p>
+
+<p>Once Pronterface is connected, user can load the G-code file and start the print. When you are currently printing, be sure not to accidentally suspend your computer by closing the lid.</p>
+
+<p><img src="https://fedoramagazine.org/wp-content/uploads/2015/07/pronterface.png" alt="Pronterface: The print just started"></p>
+
+<p>Pronterface: The print just started</p>
+
+<p><img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_60,h_60/https://dashboard.snapcraft.io/site_media/appmedia/2020/01/solvespace-256.png" alt="SolveSpace"></p>
+
+<h2 id="toc_17">SolveSpace</h2>
+
+<p>SolveSpace Publisher</p>
+
+<ul dir="auto">
+<li>  SolveSpace Publisher</li>
+<li>  <a href="https://snapcraft.io/search?category=art-and-design">Art and Design</a></li>
+</ul>
+
+<p><a href="https://snapcraft.io/install/solvespace/fedora#install">Install snap</a></p>
+
+<p><img src="https://res.cloudinary.com/canonical/image/fetch/q_auto,f_auto,w_430/https://dashboard.snapcraft.io/site_media/appmedia/2019/03/ex-case.jpg" alt=""></p>
+
+<p><img src="https://res.cloudinary.com/canonical/image/fetch/q_auto,f_auto,w_430/https://dashboard.snapcraft.io/site_media/appmedia/2019/03/ex-case-outline.png" alt=""></p>
+
+<p><img src="https://res.cloudinary.com/canonical/image/fetch/q_auto,f_auto,w_430/https://dashboard.snapcraft.io/site_media/appmedia/2019/03/linkage-whitworth-solid.png" alt=""></p>
+
+<p><img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_60,h_60/https://dashboard.snapcraft.io/site_media/appmedia/2020/01/solvespace-256.png" alt="SolveSpace"></p>
+
+<h2 id="toc_18">SolveSpace</h2>
+
+<p>SolveSpace Publisher</p>
+
+<ul dir="auto">
+<li>  SolveSpace Publisher</li>
+<li>  <a href="https://snapcraft.io/search?category=art-and-design">Art and Design</a></li>
+</ul>
+
+<p><a href="https://snapcraft.io/install/solvespace/fedora#install">Install snap</a></p>
+
+<p><img src="https://res.cloudinary.com/canonical/image/fetch/q_auto,f_auto,w_430/https://dashboard.snapcraft.io/site_media/appmedia/2019/03/ex-case.jpg" alt=""></p>
+
+<p><img src="https://res.cloudinary.com/canonical/image/fetch/q_auto,f_auto,w_430/https://dashboard.snapcraft.io/site_media/appmedia/2019/03/ex-case-outline.png" alt=""></p>
+
+<p><img src="https://res.cloudinary.com/canonical/image/fetch/q_auto,f_auto,w_430/https://dashboard.snapcraft.io/site_media/appmedia/2019/03/linkage-whitworth-solid.png" alt=""></p>
+
+<p><img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_60,h_60/https://dashboard.snapcraft.io/site_media/appmedia/2020/01/solvespace-256.png" alt="SolveSpace"></p>
+
+<h2 id="toc_19">SolveSpace</h2>
+
+<p>SolveSpace Publisher</p>
+
+<ul dir="auto">
+<li>  SolveSpace Publisher</li>
+<li>  <a href="https://snapcraft.io/search?category=art-and-design">Art and Design</a></li>
+</ul>
+
+<p><a href="https://snapcraft.io/install/solvespace/fedora#install">Install snap</a></p>
+
+<p><img src="https://res.cloudinary.com/canonical/image/fetch/q_auto,f_auto,w_430/https://dashboard.snapcraft.io/site_media/appmedia/2019/03/ex-case.jpg" alt=""></p>
+
+<p><img src="https://res.cloudinary.com/canonical/image/fetch/q_auto,f_auto,w_430/https://dashboard.snapcraft.io/site_media/appmedia/2019/03/ex-case-outline.png" alt=""></p>
+
+<p><img src="https://res.cloudinary.com/canonical/image/fetch/q_auto,f_auto,w_430/https://dashboard.snapcraft.io/site_media/appmedia/2019/03/linkage-whitworth-solid.png" alt=""></p>
+
+<h2 id="toc_20">Install <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bf.png" alt="cd"></h2>
+
+<ul dir="auto">
+<li>  Homebrew: <code>brew install gping</code></li>
+<li>  Linux (Homebrew): <code>brew install orf/brew/gping</code></li>
+<li>  CentOS (and other distributions with an old glibc): Download the MUSL build from the latest release</li>
+<li>  Windows/ARM:
+
+<ul dir="auto">
+<li>  Scoop: <code>scoop install gping</code></li>
+<li>  Chocolatey: <code>choco install gping</code></li>
+<li>  Download the latest release from <a href="https://github.com/orf/gping/releases">the github releases page</a></li>
+</ul></li>
+<li>  Fedora (<a href="https://copr.fedorainfracloud.org/coprs/atim/gping/">COPR</a>): <code>sudo dnf copr enable atim/gping -y &amp;&amp; sudo dnf install gping</code></li>
+<li>  Cargo (<strong>This requires <code>rustc</code> version 1.44.0 or greater</strong>): <code>cargo install gping</code></li>
+<li>  Arch Linux: <code>pacman -S gping</code></li>
+<li>  Ubuntu/Debian (<a href="http://packages.azlux.fr/">Azlux&#39;s repo</a>):</li>
+</ul>
+
+<p>echo <q>deb <a href="http://packages.azlux.fr/debian/">http://packages.azlux.fr/debian/</a> buster main</q> | sudo tee /etc/apt/sources.list.d/azlux.list
+wget -qO - <a href="https://azlux.fr/repo.gpg.key">https://azlux.fr/repo.gpg.key</a> | sudo apt-key add -
+sudo apt update
+sudo apt install gping</p>
+
+<h2 id="toc_21"><a href="https://github.com/orf/gping#usage-saxophone"></a></h2>
+
+<h2 id="toc_22">Install <img src="https://github.githubassets.com/images/icons/emoji/unicode/1f4bf.png" alt="cd"></h2>
+
+<h3 id="toc_22.1"></h3>
+
+<h3 id="toc_22.2">1. Before NVIDIA drivers installation</h3>
+
+<h4 id="toc_22.2.1">1.1 Check is your NVIDIA card supported</h4>
+
+<pre><code class="language-bash">lspci |grep -E &quot;VGA|3D&quot;
+
+## Example outputs ##
+01:00.0 VGA compatible controller: NVIDIA Corporation TU106 [GeForce RTX 2060 Rev. A] (rev a1)
+</code></pre>
+
+<p><a href="http://download.nvidia.com/XFree86/Linux-x86_64/460.80/README/supportedchips.html" title="List of Supported NVIDIA GPU Products">List of Supported NVIDIA GPU Products</a>, check best driver for your card.</p>
+
+<p>If you see multiple VGA controllers, then check next step and sometimes you might see example Intel VGA controller which have nothing to do with Optimus, normally you can go to BIOS and simply disable it.</p>
+
+<h4 id="toc_22.2.2">1.2 NVIDIA Optimus Technology</h4>
+
+<p>If your <strong>lspci |grep -E “VGA|3D”</strong> output looks like following:</p>
+
+<pre><code class="language-bash">00:02.0 VGA compatible controller: Intel Corporation 2n Generation Core Processor Family Integrated Graphics Controller (rev 09)
+01:00.0 VGA compatible controller: NVIDIA Corporation GF106 [GeForce GT 555M SDDR3] (rev a1)
+</code></pre>
+
+<p>Or</p>
+
+<pre><code class="language-bash">00:02.0 VGA compatible controller: Intel Corporation 4th Gen Core Processor Integrated Graphics Controller (rev 06)
+01:00.0 3D controller: NVIDIA Corporation GK107M [GeForce GT 750M] (rev a1)
+</code></pre>
+
+<p>Or you know that your computer have <a href="https://www.nvidia.com/object/optimus_technology.html" title="NVIDIA Optimus Technology">NVIDIA Optimus Technology</a>, and <strong>it is impossible to turn Intel Graphics / NVIDIA Optimus off in the BIOS then this guide might not work for you</strong> and it’s not tested. You should read this <a href="http://download.nvidia.com/XFree86/Linux-x86_64/460.80/README/optimus.html">NVIDIA Optimus page</a> first and maybe check <a href="http://bumblebee-project.org/">Bumblebee Project</a> or <a href="https://github.com/Witko/nvidia-xrun">NVIDIA XRun Project</a>.</p>
+
+<h4 id="toc_22.2.3">1.3 Disable UEFI Secure Boot or Check Howto Sign NVIDIA Kernel Module</h4>
+
+<p>If you have UEFI Secure Boot enabled, then you have to disable Secure Boot or <a href="http://download.nvidia.com/XFree86/Linux-x86_64/460.80/README/installdriver.html#modulesigning">sign your NVIDIA kernel module</a>.</p>
+
+<h3 id="toc_22.3">2. Install NVIDIA proprietary drivers on Fedora 33/32/31/30/29 and disable the nouveau driver</h3>
+
+<h4 id="toc_22.3.1">2.1 Download NVIDIA Installer Package</h4>
+
+<p>Go to <a href="https://www.nvidia.com/Download/Find.aspx?lang=en-us">http://www.nvidia.com/Download/Find.aspx?lang=en-us</a> and find latest version of installer package. When you use browser this is normally downloaded /home/<username>/Downloads/NVIDIA-Linux-xxxx.run location.</p>
+
+<h5 id="toc_22.3.1.4">Tested versions with 5.11+ / 5.10+ / 5.9+ kernels:</h5>
+
+<p>Fedora 34</p>
+
+<p>Fedora 33</p>
+
+<p>Fedora 32</p>
+
+<p>Fedora 31/30</p>
+
+<p>465.27 (April 29, 2021)</p>
+
+<p>465.27 (April 29, 2021)</p>
+
+<p>465.27 (April 29, 2021)</p>
+
+<p>465.27 (April 29, 2021)</p>
+
+<p>460.80 (May 11, 2021)</p>
+
+<p>460.80 (May 11, 2021)</p>
+
+<p>460.80 (May 11, 2021)</p>
+
+<p>460.80 (May 11, 2021)</p>
+
+<p>450.119.03 (April 19, 2021)</p>
+
+<p>450.119.03 (April 19, 2021)</p>
+
+<p>450.119.03 (April 19, 2021)</p>
+
+<p>450.119.03 (April 19, 2021)</p>
+
+<p>435.21 (August 29, 2019)</p>
+
+<p>435.21 (August 29, 2019)</p>
+
+<p>435.21 (August 29, 2019)</p>
+
+<p>435.21 (August 29, 2019)</p>
+
+<p>418.113 (November 5, 2019)</p>
+
+<p>418.113 (November 5, 2019)</p>
+
+<p>418.113 (November 5, 2019)</p>
+
+<p>418.113 (November 5, 2019)</p>
+
+<p>390.143 (April 19, 2021)</p>
+
+<p>390.143 (April 19, 2021)</p>
+
+<p>390.143 (April 19, 2021)</p>
+
+<p>390.143 (April 19, 2021)</p>
+
+<p>340.108 (December 23, 2019)</p>
+
+<p>340.108 (December 23, 2019)</p>
+
+<p>340.108 (December 23, 2019)</p>
+
+<p>340.108 (December 23, 2019)</p>
+
+<p><strong>Note 340.108 users:</strong> 340.108 on Fedora 34/33/32/31 Kernel 5.11/5.10/5.9 needs a patched version (<a href="https://www.if-not-true-then-false.com/2020/inttf-nvidia-patcher/">Download inttf NVIDIA patcher and patch NVIDIA-Linux-x86_64-340.108 for Kernel 5.11+ / 5.10+ / 5.9+</a>).</p>
+
+<p><strong>Note 418.113 and 435.21 users:</strong> These are not official NVIDIA LEGACY drivers, but there is example GeForce GTX 1650 Mobile card which is not supported by older or newer drivers. (<a href="https://www.if-not-true-then-false.com/2020/inttf-nvidia-patcher/">Download inttf NVIDIA patcher and patch NVIDIA-Linux-x86_64-418.113 and NVIDIA-Linux-x86_64-435.21 for Kernel 5.11+ / 5.10+ / 5.9+</a>)</p>
+
+<p><strong>Note Older Fedora users:</strong> If you have any problems with GDM (black screen). You can easily <a href="https://www.if-not-true-then-false.com/2018/fedora-switch-display-manager/">switch Display Manager example to LXDM, LightDM, SDDM or KDM</a>.</p>
+
+<h4 id="toc_22.3.2">2.2 Make NVIDIA installer executable</h4>
+
+<pre><code class="language-bash">chmod +x /path/to/NVIDIA-Linux-*.run
+</code></pre>
+
+<h4 id="toc_22.3.3">2.3 Change root user</h4>
+
+<pre><code class="language-bash">su -
+## OR ##
+sudo -i
+</code></pre>
+
+<h4 id="toc_22.3.4">2.4 Make sure that you system is up-to-date and you are running latest kernel</h4>
+
+<pre><code class="language-bash">## Fedora 34/33/32/31/30 ##
+dnf update
+</code></pre>
+
+<p><strong>After update reboot your system and boot using latest kernel:</strong></p>
+
+<pre><code class="language-bash">reboot
+</code></pre>
+
+<h4 id="toc_22.3.5">2.5 Install needed dependencies</h4>
+
+<pre><code class="language-bash">## Fedora 34/33/32/31/30 ##
+dnf install kernel-devel kernel-headers gcc make dkms acpid libglvnd-glx libglvnd-opengl libglvnd-devel pkgconfig
+</code></pre>
+
+<h4 id="toc_22.3.6">2.6 Disable nouveau</h4>
+
+<h5 id="toc_22.3.6.4">2.6.1 Create or edit /etc/modprobe.d/blacklist.conf</h5>
+
+<p>Append ‘blacklist nouveau’</p>
+
+<pre><code class="language-bash">echo &quot;blacklist nouveau&quot; &gt;&gt; /etc/modprobe.d/blacklist.conf
+</code></pre>
+
+<h5 id="toc_22.3.6.4">2.6.2 Edit /etc/default/grub</h5>
+
+<p>Append ‘rd.driver.blacklist=nouveau’ to end of ‘GRUB_CMDLINE_LINUX=”…”‘.</p>
+
+<pre><code class="language-bash">## Example row with Fedora 34 BTRFS ##
+GRUB_CMDLINE_LINUX=&quot;rhgb quiet rd.driver.blacklist=nouveau&quot;
+
+## OR with LVM ##
+GRUB_CMDLINE_LINUX=&quot;rd.lvm.lv=fedora/swap rd.lvm.lv=fedora/root rhgb quiet rd.driver.blacklist=nouveau&quot;
+</code></pre>
+
+<h5 id="toc_22.3.6.4">2.6.3 Update grub2 conf</h5>
+
+<p><strong>Fedora 34</strong></p>
+
+<pre><code class="language-bash">## BIOS and UEFI ##
+grub2-mkconfig -o /boot/grub2/grub.cfg
+</code></pre>
+
+<p><strong>Fedora 33/32/31/30</strong></p>
+
+<pre><code class="language-bash">## BIOS ##
+grub2-mkconfig -o /boot/grub2/grub.cfg
+
+## UEFI ##
+grub2-mkconfig -o /boot/efi/EFI/fedora/grub.cfg
+</code></pre>
+
+<h5 id="toc_22.3.6.4">2.6.4 Remove xorg-x11-drv-nouveau</h5>
+
+<pre><code class="language-bash">## Fedora 34/33/32/31/30 ##
+dnf remove xorg-x11-drv-nouveau
+</code></pre>
+
+<h5 id="toc_22.3.6.4">2.6.5 Generate initramfs</h5>
+
+<pre><code class="language-bash">## Backup old initramfs nouveau image ##
+mv /boot/initramfs-$(uname -r).img /boot/initramfs-$(uname -r)-nouveau.img
+ 
+## Create new initramfs image ##
+dracut /boot/initramfs-$(uname -r).img $(uname -r)
+</code></pre>
+
+<h4 id="toc_22.3.7">2.7 Reboot to runlevel 3</h4>
+
+<p><strong>Note:</strong> You don’t have Desktop/GUI on runlevel 3. Make sure that you have some access to end of guide. (Open it on mobile browser, Print it, use lynx/links/w3m, save it to text file).</p>
+
+<pre><code class="language-bash">systemctl set-default multi-user.target
+
+reboot
+</code></pre>
+
+<p><strong>OR alternatively you can <a href="https://www.if-not-true-then-false.com/2012/howto-change-runlevel-on-grub2/">change the runlevel on GRUB2 adding one additional parameter</a>. <a href="https://www.if-not-true-then-false.com/2012/howto-change-runlevel-on-grub2/">Quick guide howto change runlevel on GRUB2</a>. If you use this method, then don’t set multi-user.target and don’t set graphical.target on step 2.9 (just reboot).</strong></p>
+
+<h4 id="toc_22.3.8">2.8 Install NVIDIA proprietary drivers for GeForce 6/7 &amp; GeForce 8/9/200/300 &amp; GeForce 400/500/600/700/800/900/10/20 series cards</h4>
+
+<h5 id="toc_22.3.8.4">2.8.1 Log in as root user</h5>
+
+<p>Or alternatively change root user (you shouldn’t have nouveau and xorg loaded)</p>
+
+<pre><code class="language-bash">su -
+## OR ##
+sudo -i
+</code></pre>
+
+<h5 id="toc_22.3.8.4">2.8.2 Run NVIDIA Binary</h5>
+
+<p>Following command executes driver install routine. Use full file name command if you have multiple binaries on same directory.</p>
+
+<pre><code class="language-bash">./NVIDIA-Linux-*.run
+
+## OR full path / full file name ##
+
+Downloads/NVIDIA-Linux-x86_64-465.27.run
+
+Downloads/NVIDIA-Linux-x86_64-460.80.run
+
+Downloads/NVIDIA-Linux-x86_64-450.119.03.run
+
+./NVIDIA-Linux-x86_64-435.21-patched-kernel-5.11.run
+
+./NVIDIA-Linux-x86_64-418.118-patched-kernel-5.11.run
+
+./NVIDIA-Linux-x86_64-390.143.run
+
+/path/to/NVIDIA-Linux-x86_64-340.108-patched-kernel-5.11.run
+</code></pre>
+
+<p><strong>Note:</strong> <a href="https://www.if-not-true-then-false.com/2015/fedora-nvidia-guide/4/#libglvnd-error">If you get libglvnd error, then abort installation and try this</a>. Also “Install and overwrite existing files” works, but fixing this error is more clean way to install NVIDIA Drivers.</p>
+
+<h4 id="toc_22.3.9">2.9 All Is Done and Then Reboot Back to Runlevel 5</h4>
+
+<pre><code class="language-bash">systemctl set-default graphical.target
+
+reboot
+</code></pre>
+
+<h4 id="toc_22.3.10">2.10 VDPAU/VAAPI support</h4>
+
+<p>To enable video acceleration support for your player (Note: you need Geforce 8 or later).</p>
+
+<pre><code class="language-bash">## Fedora 34/33/32/31/30 ##
+dnf install vdpauinfo libva-vdpau-driver libva-utils
+</code></pre>
+
+<hr>
+
+<h3 id="toc_22.4">Oh My Zsh</h3>
+
+<ol dir="auto">
+<li><p>Clone this repository into <code>$ZSH_CUSTOM/plugins</code> (by default <code>~/.oh-my-zsh/custom/plugins</code>)</p>
+
+<p>git clone <a href="https://github.com/zsh-users/zsh-autosuggestions">https://github.com/zsh-users/zsh-autosuggestions</a> ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions</p></li>
+<li><p>Add the plugin to the list of plugins for Oh My Zsh to load (inside <code>~/.zshrc</code>):</p>
+
+<p>plugins=(zsh-autosuggestions)</p></li>
+<li><p>Start a new terminal session.</p></li>
+</ol>
+
+<h3 id="toc_22.5"><a href="https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#manual-git-clone"></a></h3>
+
+<h3 id="toc_22.6">Oh My Zsh</h3>
+
+<ol dir="auto">
+<li><p>Clone this repository into <code>$ZSH_CUSTOM/plugins</code> (by default <code>~/.oh-my-zsh/custom/plugins</code>)</p>
+
+<p>git clone <a href="https://github.com/zsh-users/zsh-autosuggestions">https://github.com/zsh-users/zsh-autosuggestions</a> ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions</p></li>
+<li><p>Add the plugin to the list of plugins for Oh My Zsh to load (inside <code>~/.zshrc</code>):</p>
+
+<p>plugins=(zsh-autosuggestions)</p></li>
+<li><p>Start a new terminal session.</p></li>
+</ol>
+
+<h3 id="toc_22.7"><a href="https://github.com/zsh-users/zsh-autosuggestions/blob/master/INSTALL.md#manual-git-clone"></a></h3>
+
+<hr>
+
+<h5 id="toc_22.7.0.4"><a href="http://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a></h5>
+
+<ul dir="auto">
+<li><p>Clone the repository inside your oh-my-zsh repo:</p>
+
+<pre><code>  git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+</code></pre></li>
+<li><p>Enable it in your <code>.zshrc</code> by adding it to your plugin list and reloading the completion:</p>
+
+<pre><code>  plugins=(… zsh-completions)
+  autoload -U compinit &amp;&amp; compinit
+</code></pre></li>
+</ul>
+
+<h4 id="toc_22.7.1"><a href="https://github.com/zsh-users/zsh-completions#manual-installation"></a></h4>
+
+<h5 id="toc_22.7.1.4"><a href="http://github.com/robbyrussell/oh-my-zsh">oh-my-zsh</a></h5>
+
+<ul dir="auto">
+<li><p>Clone the repository inside your oh-my-zsh repo:</p>
+
+<pre><code>  git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
+</code></pre></li>
+<li><p>Enable it in your <code>.zshrc</code> by adding it to your plugin list and reloading the completion:</p>
+
+<pre><code>  plugins=(… zsh-completions)
+  autoload -U compinit &amp;&amp; compinit
+</code></pre></li>
+</ul>
+
+<h4 id="toc_22.7.2"><a href="https://github.com/zsh-users/zsh-completions#manual-installation"></a></h4>
+
+<hr>
+
+<h4 id="toc_22.7.3">In your ~/.zshrc</h4>
+
+<p>Simply clone this repository and source the script:</p>
+
+<p>git clone <a href="https://github.com/zsh-users/zsh-syntax-highlighting.git">https://github.com/zsh-users/zsh-syntax-highlighting.git</a>
+echo <q>source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</q> &gt;&gt; \({ZDOTDIR:-\)HOME}/.zshrc</p>
+
+<p>Then, enable syntax highlighting in the current interactive shell:</p>
+
+<p>source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</p>
+
+<p>If <code>git</code> is not installed, download and extract a snapshot of the latest development tree from:</p>
+
+<pre><code>https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz
+</code></pre>
+
+<p>Note the <code>source</code> command must be <strong>at the end</strong> of <code>~/.zshrc</code>.</p>
+
+<h4 id="toc_22.7.4"><a href="https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#with-a-plugin-manager"></a></h4>
+
+<h4 id="toc_22.7.5">In your ~/.zshrc</h4>
+
+<p>Simply clone this repository and source the script:</p>
+
+<p>git clone <a href="https://github.com/zsh-users/zsh-syntax-highlighting.git">https://github.com/zsh-users/zsh-syntax-highlighting.git</a>
+echo <q>source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</q> &gt;&gt; \({ZDOTDIR:-\)HOME}/.zshrc</p>
+
+<p>Then, enable syntax highlighting in the current interactive shell:</p>
+
+<p>source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</p>
+
+<p>If <code>git</code> is not installed, download and extract a snapshot of the latest development tree from:</p>
+
+<pre><code>https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz
+</code></pre>
+
+<p>Note the <code>source</code> command must be <strong>at the end</strong> of <code>~/.zshrc</code>.</p>
+
+<h4 id="toc_22.7.6"><a href="https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#with-a-plugin-manager"></a></h4>
+
+<h4 id="toc_22.7.7">In your ~/.zshrc</h4>
+
+<p>Simply clone this repository and source the script:</p>
+
+<p>git clone <a href="https://github.com/zsh-users/zsh-syntax-highlighting.git">https://github.com/zsh-users/zsh-syntax-highlighting.git</a>
+echo <q>source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</q> &gt;&gt; \({ZDOTDIR:-\)HOME}/.zshrc</p>
+
+<p>Then, enable syntax highlighting in the current interactive shell:</p>
+
+<p>source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</p>
+
+<p>If <code>git</code> is not installed, download and extract a snapshot of the latest development tree from:</p>
+
+<pre><code>https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz
+</code></pre>
+
+<p>Note the <code>source</code> command must be <strong>at the end</strong> of <code>~/.zshrc</code>.</p>
+
+<h4 id="toc_22.7.8"><a href="https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#with-a-plugin-manager"></a></h4>
+
+<h4 id="toc_22.7.9">In your ~/.zshrc</h4>
+
+<p>Simply clone this repository and source the script:</p>
+
+<p>git clone <a href="https://github.com/zsh-users/zsh-syntax-highlighting.git">https://github.com/zsh-users/zsh-syntax-highlighting.git</a>
+echo <q>source ${(q-)PWD}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</q> &gt;&gt; \({ZDOTDIR:-\)HOME}/.zshrc</p>
+
+<p>Then, enable syntax highlighting in the current interactive shell:</p>
+
+<p>source ./zsh-syntax-highlighting/zsh-syntax-highlighting.zsh</p>
+
+<p>If <code>git</code> is not installed, download and extract a snapshot of the latest development tree from:</p>
+
+<pre><code>https://github.com/zsh-users/zsh-syntax-highlighting/archive/master.tar.gz
+</code></pre>
+
+<p>Note the <code>source</code> command must be <strong>at the end</strong> of <code>~/.zshrc</code>.</p>
+
+<h4 id="toc_22.7.10"><a href="https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/INSTALL.md#with-a-plugin-manager"></a></h4>
+</div>
+</div>
+ 
+<script>hljs.initHighlightingOnLoad();</script>
+<script>mermaid.initialize({startOnLoad:true});</script>
+</body>
+</html>
