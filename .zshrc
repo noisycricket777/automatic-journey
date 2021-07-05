@@ -168,6 +168,7 @@ alias update='sudo dnf update'
 alias install='sudo dnf install -y'
 
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 neofetch
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
