@@ -6,7 +6,7 @@
 #
 ##################################################################################################################
 
-sudo dnf install -y dconf dconf-editor
+sudo pacman -S dconf dconf-editor
 
 dconf load /org/gnome/shell/keybindings/ < keyboard-shortcuts.dconf
 
