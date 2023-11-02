@@ -20,7 +20,7 @@ echo ""
 lsblk
 read -p "Enter the name of the EFI partition (eg. sda1): " sdb1
 read -p "Enter the name of the ROOT partition (eg. sda2): " sdb2
-read -p "Enter the name of the VM partition (keep it empty if not required): " sdb3
+# read -p "Enter the name of the VM partition (keep it empty if not required): " sda3
 
 # ------------------------------------------------------
 # Sync time
@@ -30,14 +30,14 @@ timedatectl set-ntp true
 # ------------------------------------------------------
 # Format partitions
 # ------------------------------------------------------
-mkfs.fat -F 32 /dev/$sda1;
-mkfs.btrfs -f /dev/$sda2
+mkfs.fat -F 32 /dev/$sdb1;
+mkfs.btrfs -f /dev/$sdb2
 # mkfs.btrfs -f /dev/$sda3
 
 # ------------------------------------------------------
 # Mount points for btrfs
 # ------------------------------------------------------
-mount /dev/$sda2 /mnt
+mount /dev/$sdb2 /mnt
 btrfs su cr /mnt/@
 btrfs su cr /mnt/@cache
 btrfs su cr /mnt/@home
@@ -52,13 +52,13 @@ mount -o compress=zstd:1,noatime,subvol=@home /dev/$sdb2 /mnt/home
 mount -o compress=zstd:1,noatime,subvol=@log /dev/$sdb2 /mnt/var/log
 mount -o compress=zstd:1,noatime,subvol=@snapshots /dev/$sdb2 /mnt/.snapshots
 mount /dev/$sdb1 /mnt/boot/efi
-mkdir /mnt/vm
-mount /dev/$sdb3 /mnt/vm
+# mkdir /mnt/vm
+# mount /dev/$sda3 /mnt/vm
 
 # ------------------------------------------------------
 # Install base packages
 # ------------------------------------------------------
-pacstrap -K /mnt base base-devel git linux linux-firmware micro openssh reflector rsync amd-ucode
+pacstrap -K /mnt base base-devel git linux linux-firmware nano vim openssh reflector rsync amd-ucode
 
 # ------------------------------------------------------
 # Generate fstab
