@@ -1,17 +1,3 @@
-# Arch Install Script with btrfs for Timeshift or snapper
-
-This is a bash based Arch Linux installation script with EFI boot loader and btrfs partition prepared for Timeshift or snapper.
-
-[![Watch on YouTube](https://img.youtube.com/vi/uskzgcyGAOE/0.jpg)](https://www.youtube.com/watch?v=uskzgcyGAOE)
-
-Install Arch Linux YOUR WAY. Arch Linux Installation 2023
-https://youtu.be/uskzgcyGAOE
-
-## Getting started
-
-To make it easy for you to get started, here's a list of recommended next steps. 
-The script will ask for some information during the installation but is not performing any validation check so far.
-To get detailed information how to install Arch Linux, please visit https://wiki.archlinux.org/title/installation_guide
 
 
 ```
