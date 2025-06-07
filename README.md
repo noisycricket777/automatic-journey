@@ -2,8 +2,6 @@
 
 This is a bash based Arch Linux installation script with EFI boot loader and btrfs partition prepared for Timeshift or snapper.
 
-[![Watch on YouTube](https://img.youtube.com/vi/uskzgcyGAOE/0.jpg)](https://www.youtube.com/watch?v=uskzgcyGAOE)
-
 Install Arch Linux YOUR WAY. Arch Linux Installation 2023
 https://youtu.be/uskzgcyGAOE
 
@@ -16,7 +14,7 @@ To get detailed information how to install Arch Linux, please visit https://wiki
 
 ```
 # Load keyboard layout (replace de with us, fr, es if needed)
-loadkeys de-latin1
+loadkeys us
 
 # Increase font size (optional)
 setfont ter-p20b
@@ -49,9 +47,7 @@ pacman -Syy
 pacman -S git
 
 # Clone Installation
-git clone https://gitlab.com/stephan-raabe/archinstall.git
-cd archinstall
-
+git clone https://github.com/noisycricket777/automatic-journey
 # Start the script
 ./1-install.sh
 
@@ -67,6 +63,7 @@ After the installation you will find additional scripts in your home folder to i
 - zram swap file
 - timeshift snapshots
 - preload application cache
+- kvm virtual machine manager
 
 Please also check out the dotfiles to configure qtile and several other applications.
 

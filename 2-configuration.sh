@@ -10,7 +10,7 @@
 # ------------------------------------------------------
 clear
 keyboardlayout="us"
-zoneinfo="America/Denver"
+zoneinfo="America/Phoenix"
 hostname="arch"
 username="josh"
 
@@ -117,6 +117,7 @@ cp /archinstall/3-yay.sh /home/$username
 cp /archinstall/4-zram.sh /home/$username
 cp /archinstall/5-timeshift.sh /home/$username
 cp /archinstall/6-preload.sh /home/$username
+cp /arhinstall/7-kvm.sh /home/$username
 cp /archinstall/snapshot.sh /home/$username
 
 clear
@@ -132,6 +133,7 @@ echo "- yay AUR helper: 3-yay.sh"
 echo "- zram swap: 4-zram.sh"
 echo "- timeshift snapshot tool: 5-timeshift.sh"
 echo "- preload application cache: 6-preload.sh"
+echo "- kvm-virtual machine manager: 7-kvm.sh"
 echo ""
 echo "Please exit & shutdown (shutdown -h now), remove the installation media and start again."
 echo "Important: Activate WIFI after restart with nmtui."
