@@ -58,7 +58,7 @@ mount /dev/$sdb1 /mnt/boot/efi
 # ------------------------------------------------------
 # Install base packages
 # ------------------------------------------------------
-pacstrap -K /mnt base base-devel git linux linux-firmware nano vim openssh reflector rsync amd-ucode
+pacstrap -K /mnt base base-devel git linux linux-firmware nano vim openssh reflector rsync intel-ucode
 
 # ------------------------------------------------------
 # Generate fstab

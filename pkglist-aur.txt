@@ -1,0 +1,16 @@
+bibata-cursor-theme-bin
+checkupdates-with-aur
+cosmic-store-git
+googler
+gtkhash-nemo-git
+hyprshade
+libserialport-git
+libsigrokdecode-git
+ml4w-hyprland
+nautilus-open-any-terminal
+nodejs-npm-check
+oh-my-posh-bin
+pacseek
+pinta
+saleae-logic2
+vscodium-bin
